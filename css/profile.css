@@ -1,0 +1,341 @@
+#perfil {
+    height: 90vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 40vh 30vh 10vh;
+    ;
+    text-align: center;
+}
+
+#banner {
+    background-size: cover;
+    background-position: center;
+}
+
+#icon {
+    height: 30vh;
+    width: 30vh;
+    background-size: cover;
+    background-position: center;
+    border-radius: 100%;
+    border: 1vh solid #202225;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4vh;
+}
+
+#username {
+    margin-top: 1vh;
+}
+
+#editbtn {
+    height: 5vh;
+    width: 10vw;
+    border: hidden;
+    border-radius: 0.5vh;
+    background-color: #40444B;
+    margin-top: 1vh;
+    margin-bottom: 1.5vh;
+    transition: 0.3s;
+}
+
+#editbtn:hover {
+    background-color: #2F3136;
+}
+
+#bio {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+    width: 30vw;
+}
+
+#seg {
+    display: grid;
+    grid-template-columns: repeat(4, 25vw);
+}
+
+#seguindo {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+#seguidores {
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+#myposts {
+    width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#postagem {
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    background-color: #202225;
+    min-height: 15vh;
+    display: grid;
+    grid-template-rows: 10vh auto 5vh;
+    border-radius: 0.5vh;
+}
+
+#postheader {
+    display: grid;
+    grid-template-columns: 12vh auto;
+}
+
+.icon {
+    height: 8vh;
+    width: 8vh;
+    margin-top: 0.5vh;
+    margin-left: 1vw;
+    border: 0.5vh solid #40444B;
+    border-radius: 100%;
+    display: grid;
+    transition: 0.3s;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.icon:hover {
+    border-color: #2F3136;
+}
+
+.pubname {
+    margin-top: 2.5vh;
+}
+
+.invico {
+    border: none;
+    background-color: #0000;
+}
+
+.pubtxt {
+    width: 37vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1vh;
+    text-align: justify;
+    text-overflow: ellipsis;
+}
+
+.foto {
+    width: 48vw;
+    min-height: 25vh;
+    max-height: 50vw;
+    margin-left: 1vw;
+    border: none;
+    border-radius: 0.5vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh
+}
+
+.acoes {
+    display: grid;
+    grid-template-columns: 1vw 2.5vw 4.5vw 2.5vw auto;
+}
+
+.curtir {
+    margin-top: 1vh;
+    height: 3vh;
+    background-image: url(../img/icons/fav.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: 0.3s
+}
+
+.curtir:hover {
+    background-image: url(../img/icons/fav_hover.png);
+}
+
+.curtidas {
+    margin-top: 0.75vh;
+    font-weight: 200;
+}
+
+.compartilhar {
+    margin-top: 1vh;
+    height: 3vh;
+    background-image: url(../img/icons/reply.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: 0.3s
+}
+
+.compartilhar:hover {
+    background-image: url(../img/icons/reply_hover.png);
+}
+
+.pubview {
+    height: 3vh;
+    display: grid;
+    margin-top: 1vh;
+}
+
+.postvbtn {
+    width: 15vw;
+    margin-left: 23.5vw;
+    background-color: #40444B;
+    border: none;
+    border-radius: 0.5vh;
+    transition: 0.3s;
+}
+
+.postvbtn:hover {
+    background-color: #2F3136;
+}
+
+#end {
+    text-align: center;
+    margin-top: 7.5vh;
+    margin-bottom: 7.5vh;
+}
+
+.imabot {
+    background-color: #0000;
+    border: none;
+    display: grid;
+    overflow-y: hidden;
+    align-content: center;
+}
+
+.imageviewer {
+    width: 100%;
+    max-height: 48vw;
+    border-radius: 0.5vh;
+    object-fit: cover;
+}
+
+@media only screen and (min-width: 426px) and (max-width: 1024px) {
+    #username {
+        margin-top: 1vh;
+        font-size: 3vh;
+    }
+
+    #editbtn {
+        width: 15vw;
+    }
+
+    #bio {
+        width: 50vw;
+    }
+
+    #seg {
+        grid-template-columns: 20vw 30vw 30vw 20vw;
+    }
+
+    #myposts {
+        width: 70vw;
+    }
+    
+    .icon {
+        margin-left: 1.5vw;
+    }
+    
+    .pubname {
+        margin-top: 3vh;
+        text-overflow: ellipsis;
+        font-size: 2.2vh;
+    }
+
+    .pubtxt {
+        width: 68vw;
+    }
+
+    .foto {
+        width: 68vw;
+        min-height: 25vh;
+        max-height: 70vw;
+    }
+
+    .acoes {
+        display: grid;
+        grid-template-columns: 1.5vw 2.5vw 4.5vw 2.5vw auto;
+    }
+
+    .postvbtn {
+        width: 20vw;
+        margin-left: 37.5vw;
+        background-color: #40444B;
+        border: none;
+        border-radius: 0.5vh;
+        transition: 0.3s;
+    }
+
+    .imageviewer {
+        max-height: 68vw;
+    }
+
+}
+
+@media only screen and (min-width: 1px) and (max-width: 425px) {
+    #username {
+        margin-top: 1vh;
+        font-size: 2vh;
+    }
+
+    #editbtn {
+        width: 25vw;
+    }
+
+    #bio {
+        width: 75vw;
+    }
+
+    #seg {
+        grid-template-columns: 0vw 50vw 50vw 0vw;
+    }
+
+    #myposts {
+        width: 90vw;
+    }
+
+    .icon {
+        margin-left: 1.5vw;
+    }
+
+    .pubname {
+        margin-top: 3.5vh;
+        text-overflow: ellipsis;
+        font-size: 1.5vh;
+    }
+
+    .pubtxt {
+        width: 85vw;
+        margin-left: 2.5vw;
+    }
+
+    .foto {
+        width: 88vw;
+        min-height: 25vh;
+        max-height: 90vw;
+    }
+
+    .acoes {
+        grid-template-columns: 2.5vw 5vw 10vw 5vw auto;
+    }
+
+    .postvbtn {
+        width: 30vw;
+        margin-left: 35.5vw;
+        background-color: #40444B;
+        border: none;
+        border-radius: 0.5vh;
+        transition: 0.3s;
+    }
+
+    .imageviewer {
+        max-height: 88vw;
+    }
+}

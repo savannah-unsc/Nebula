@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+*{
+margin: 0;
+overflow-x: hidden;
+}
+body{
+background-image: url(../img/bgs/default.png);
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+font-family: Poppins, sans-serif;
+font-size: 1.6vh;
+color: #fff;
+}
+input{
+font-family: Poppins, sans-serif;
+font-size: 1.6vh;
+color: white;
+}
+button{
+font-family: Poppins, sans-serif;
+font-size: 1.6vh;
+color: white;
+}
+textarea{
+font-family: Poppins, sans-serif;
+font-size: 1.6vh;
+color: white;
+}
+::-webkit-input-placeholder{
+color: #B9BBBE;
+font-family: Poppins, sans-serif;
+}
+::-webkit-textarea-placeholder{
+color: #B9BBBE;
+font-family: Poppins, sans-serif;
+}
+::-webkit-scrollbar{
+width: 0px;
+}
+.gray{
+color: #B9BBBE;
+}
+#space2{
+height: 2vh;
+}
+#space5{
+height: 5vh;
+}

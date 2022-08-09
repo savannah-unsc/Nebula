@@ -1,0 +1,80 @@
+#corpo {
+    height: auto;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.profile {
+    height: 45vh;
+    width: 28vw;
+    display: grid;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-rows: 33.75vh 11.25vh;
+    border: none;
+    border-radius: 0.5vh;
+}
+
+.banner {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.usericon {
+    height: 25vh;
+    width: 25vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 4vh;
+    border: 0.75vh solid #2F3136;
+    border-radius: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+}
+
+#invbtn {
+    background-color: #0000;
+    border: none;
+}
+
+.profbtn {
+    background-color: #40444B;
+    border: none;
+    transition: 0.3s;
+}
+
+.profbtn:hover {
+    background-color: #2F3136;
+}
+
+@media only screen and (min-width: 426px) and (max-width: 1024px) {
+    #corpo {
+        grid-template-columns: 100vw;
+    }
+
+    .profile {
+        width: 70vw;
+    }
+    .profbtn {
+        font-size: 1.7vw;
+    }
+}
+
+@media only screen and (min-width: 1px) and (max-width: 425px) {
+    #corpo {
+        grid-template-columns: 100vw;
+    }
+
+    .profile {
+        width: 90vw;
+    }
+    .profbtn {
+        font-size: 2.5vw;
+    }
+}

@@ -1,0 +1,181 @@
+#perfil {
+    height: 90vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 40vh 20vh 30vh;
+    text-align: center;
+}
+
+#banner {
+    background-size: cover;
+    background-position: center;
+}
+
+#icon {
+    height: 30vh;
+    width: 30vh;
+    background-size: cover;
+    background-position: center;
+    border-radius: 100%;
+    border: 1vh solid #202225;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4vh;
+}
+
+.inp {
+    margin-top: 1.5vh;
+    margin-bottom: 1vh;
+    height: 5vh;
+    width: 30vw;
+    border-radius: 0.5vh;
+    background-color: #0000;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 23vw 7vw;
+    transition: 0.3s;
+}
+
+.inptxt {
+    border: 0px solid #0000;
+    border-radius: 0.5vh;
+    background-color: #40444B;
+}
+
+#editbtn {
+    height: 5vh;
+    width: 10vw;
+    border: hidden;
+    border-radius: 0.5vh;
+    background-color: #40444B;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    transition: 0.3s;
+}
+
+#editbtn:hover {
+    background-color: #2F3136;
+}
+
+#biodiv {
+    height: 12vh;
+    width: 30vw;
+    border-radius: 0.5vh;
+    background-color: #40444B;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 30vw;
+    margin-bottom: 1vh;
+}
+
+#bioarea {
+    border: 0px solid #0000;
+    border-radius: 0.5vh 0vh 0vh 0.5vh;
+    background-color: #40444B;
+    resize: none;
+}
+
+#icoban {
+    display: grid;
+    grid-template-rows: repeat(2, 10vh);
+}
+
+.icobanform {
+    background-color: #2F3136;
+    border-radius: 0.5vh;
+    margin-top: 2.5vh;
+    margin-left: auto;
+    margin-right: auto;
+    height: 5vh;
+    width: 20vw;
+    transition: 0.3s;
+    display: grid;
+    grid-template-columns: 10vw 10vw;
+}
+
+.icobanlabdiv {
+    text-align: center;
+    transition: 0.3s;
+    display: grid;
+}
+
+.icobanlabdiv:hover {
+    background-color: #40444B;
+}
+
+.icobanlab {
+    margin-top: 1.2vh;
+}
+
+.icobaninp {
+    display: none;
+}
+
+.icobanbtn {
+    background-color: #2F3136;
+    border: none;
+    height: 5vh;
+    width: 10vw;
+    transition: 0.3s;
+}
+
+.icobanbtn:hover {
+    background-color: #40444B;
+}
+
+@media only screen and (min-width: 426px) and (max-width: 1024px) {
+    .inp {
+        width: 50vw;
+        grid-template-columns: 35vw 15vw;
+    }
+
+    #editbtn {
+        height: 5vh;
+        width: 15vw;
+    }
+
+    #biodiv {
+        width: 50vw;
+        grid-template-columns: 50vw;
+    }
+
+    .icobanform {
+        width: 50vw;
+        grid-template-columns: 25vw 25vw;
+    }
+
+    .icobanbtn {
+        width: 25vw;
+    }
+
+}
+
+@media only screen and (min-width: 1px) and (max-width: 425px) {
+
+    .inp {
+        width: 80vw;
+        grid-template-columns: 50vw 30vw;
+    }
+
+    #editbtn {
+        height: 5vh;
+        width: 25vw;
+    }
+
+    #biodiv {
+        width: 80vw;
+        grid-template-columns: 80vw;
+    }
+
+    .icobanform {
+        width: 80vw;
+        grid-template-columns: 40vw 40vw;
+    }
+
+    .icobanbtn {
+        width: 40vw;
+    }
+
+}

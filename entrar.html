@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Nebula | Entrar </title>
+    <link rel="shortcut icon" href="nebula.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/login.css">
+  </head>
+  <body>
+    <div id="corpo">
+      <div id="logo"></div>
+      <form id="corpo_login" action="php/login.php" method="post">
+        <h1 id="wel"> Bem-Vindo </h1>
+        <div class="inpf"> <input type="email" name="login" class="inptxt" placeholder="Email" maxlength="60" required> </div>
+        <div class="inp"> <input type="password" name="password" class="inptxt" id="password" placeholder="Senha" minlength="8" maxlength="50" required> <button type="button" id="vbtn" onclick="altpas()"> <img class="visibility" src="img/icons/visibility.png"> </button> </div>
+        <input type="submit" id="logbtn" value="Entrar">
+      </form>
+      <form action="registro.html" method="post"> <input type="submit" id="cadbtn" value="Registrar-se"> </form>
+    </div>
+    <script src="js/psstotxt.js"></script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Nebula | Registrar-se (Passo 1) </title>
+    <link rel="shortcut icon" href="nebula.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/cadastro.css">
+  </head>
+  <body>
+    <div id="corpo">
+      <div id="logo"></div>
+      <form action="registro.php" id="corpo_cadastro" method="post">
+        <h1 id="wel"> Crie seu Perfil </h1>
+        <div id="space5"></div>
+        <div class="inpf"> <input type="email" name="login" class="inptxt" placeholder="Email" maxlength="60" required> </div>
+        <div class="inp"> <input type="password" name="password" class="inptxt" id="password" placeholder="Senha" minlength="8" maxlength="32" required> <button type="button" id="vbtn" onclick="altpas()"> <img class="visibility" src="img/icons/visibility.png"> </button> </div>
+        <div class="inp"> <input type="password" name="confirm_password" class="inptxt" id="passcon" placeholder="Confirmar Senha" minlength="8" maxlength="32" required> <button type="button" id="vbtn" onclick="altpas()"> <img class="visibility" src="img/icons/visibility.png"> </button> </div>
+        <div id="space2"></div>
+        <input type="submit" id="cadbtn" value="Registrar">
+      </form>
+      <form action="entrar.html" method="post"> <input type="submit" id="logbtn" value="Já Registrado?"> </form>
+    </div>
+    <script src="js/psstotxt.js"></script>
+  </body>
+</html>

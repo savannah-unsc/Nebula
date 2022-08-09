@@ -1,0 +1,130 @@
+.headerh1{
+text-align: center;
+margin-top: 5vh;
+margin-bottom: 5vh;
+}
+.confmenu{
+height: 30vh;
+width: 80vw;
+margin-top: 2.5vh;
+margin-bottom: 2.5vh;
+margin-left: auto;
+margin-right: auto;
+display: grid;
+grid-template-columns: 25vw 47.5vw 7.5vw;
+border-radius: 0.5vh;
+}
+.confmenu2{
+height: 50vh;
+width: 80vw;
+margin-top: 2.5vh;
+margin-bottom: 2.5vh;
+margin-left: auto;
+margin-right: auto;
+display: grid;
+grid-template-columns: 25vw 47.5vw 7.5vw;
+border-radius: 0.5vh;
+}
+.titlemenu{
+background-color: #202225;
+text-align: center;
+}
+.title{
+margin-top: 12.5vh;
+width: 20vw;
+margin-left: auto;
+margin-right: auto;
+}
+.title2l{
+margin-top: 10vh;
+width: 20vw;
+margin-left: auto;
+margin-right: auto;
+}
+.title3{
+margin-top: 22vh;
+width: 20vw;
+margin-left: auto;
+margin-right: auto;
+}
+.conmenu{
+background-color: #2F3136;
+text-align: center;
+}
+.confirmbtndiv{
+display: grid;
+}
+.confirmbtn{
+background-color: #202225;
+border: none;
+transition: 0.3s;
+}
+.confirmbtn:hover{
+background-color: #2F3136;
+}
+#lolinp{
+height: 5vh;
+width: 30vw;
+margin-top: 12.5vh;
+border: none;
+border-radius: 0.5vh;
+background-color: #40444B;
+}
+#exitform{
+width: 100vw;
+height: 5vh;
+margin-bottom: 5vh;
+margin-top: 5vh;
+text-align: center;
+}
+#exitbtn{
+height: 5vh;
+width: 7.5vw;
+border: none;
+border-radius: 0.5vh;
+background-color: #E74C3C;
+transition: 0.3s;
+}
+#exitbtn:hover{
+background-color: #A93226;
+}
+.inp{
+height: 5vh;
+width: 30vw;
+border-radius: 0.5vh;
+background-color: #2F3136;
+margin-left: auto;
+margin-right: auto;
+display: grid;
+grid-template-columns: 26.5vw 3.5vw;
+transition: 0.3s;
+}
+.inpf{
+margin-top: 8.75vh;
+height: 5vh;
+width: 30vw;
+border-radius: 0.5vh;
+background-color: #40444B;
+margin-left: auto;
+margin-right: auto;
+display: grid;
+grid-template-columns: 30vw;
+margin-bottom: 2.5vh;
+}
+.inptxt{
+border: none;
+border-radius: 0.5vh 0vh 0vh 0.5vh;
+background-color: #40444B;
+}
+.visibility{
+margin-top: 0.5vh;
+height: 2.5vh;
+}
+#vbtn{
+border: none;
+background-color: #202225;
+transition: 0.3s;
+}
+#vbtn:hover{
+background-color: #40444B;
+}
