@@ -24,17 +24,33 @@ $result=mysqli_query($conn,$sql);
 while($tabela=mysqli_fetch_array($result))
 {
 $id = $tabela["id"];
+$c2FA = $tabela["codigo_2FA"];
+$v2FA = $tabela["validade_2FA"];
 
-session_start();
-$_SESSION['id'] = $id;
-}
+if ($v2FA == 1) {
+  session_start();
+  $_SESSION['email'] = $email;
+  $_SESSION['senha'] = $senha;
+  
 
-if (mysqli_affected_rows($conn)){
-echo "<script> location.href='../home.php'</script>";
-}
-else{
-echo "<script> window.alert('Email ou Senha incorretos!') </script>";
-echo "<script> window.history.back() </script>";
-}
+  if (mysqli_affected_rows($conn)){
+    echo "<script> location.href='../2FA.php'</script>";
+    }
+    else{
+    echo "<script> window.alert('Email ou Senha incorretos!') </script>";
+    echo "<script> window.history.back() </script>";
+    }
+} else {
+  session_start();
+  $_SESSION['id'] = $id;
 
+  if (mysqli_affected_rows($conn)){
+    echo "<script> location.href='../home.php'</script>";
+    }
+    else{
+    echo "<script> window.alert('Email ou Senha incorretos!') </script>";
+    echo "<script> window.history.back() </script>";
+    }
+}
+}
 ?>

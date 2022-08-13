@@ -1,0 +1,60 @@
+#corpo {
+    background-color: #202225;
+    height: 80vh;
+    width: 30vw;
+    margin-top: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.5vh;
+    display: grid;
+    grid-template-rows: 10vh auto 7vh 7vh;
+}
+
+#corpo2 {
+    background-color: #202225;
+    height: 24vh;
+    width: 30vw;
+    margin-top: 38vh;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.5vh;
+    display: grid;
+    grid-template-rows: 10vh 7vh 7vh;
+}
+
+#title {
+    text-align: center;
+    margin-top: 1.5vh;
+}
+
+#code {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25vw;
+}
+
+#codeinp {
+    height: 5vh;
+    width: 25vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #2F3136;
+    border: none;
+    text-align: center;
+    border-radius: 0.5vh;
+}
+
+#codebtn {
+    height: 5vh;
+    width: 15vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #40444B;
+    border: none;
+    transition: 0.3s;
+    border-radius: 0.5vh;
+}
+
+#codebtn:hover {
+    background-color: #2F3136;
+}

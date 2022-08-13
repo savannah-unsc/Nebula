@@ -61,6 +61,33 @@
     </div>
 </form>
 
+  <form class="confmenu" action="2FAadd.php">
+    <div class="titlemenu"> <h1 class="title2l"> Ativar verificação de 2 fatores </h1> </div>
+    <div class="conmenu">
+      <h1 class="title"> <?php
+      
+      $sql = "select * from login where id = $id";
+      $query = mysqli_query($conn, $sql) or die ("Erro!");
+
+      $result=mysqli_query($conn,$sql);
+        while($tabela=mysqli_fetch_array($result))
+      {
+        $v2FA = $tabela["validade_2FA"];
+      }
+
+      if ($v2FA == 0) {
+        echo("Desativada");
+      } else {
+        echo("Ativada");
+      }
+
+      ?> </h1>
+    </div>
+    <div class="confirmbtndiv">
+      <input class="confirmbtn" type="submit" value="Guardar">
+    </div>
+</form>
+
   <!-- <div class="confmenu">
     <div class="titlemenu"> <h1 class="title2l"> Atualizar Perfil para Comunidade </h1> </div>
     <div class="conmenu">
