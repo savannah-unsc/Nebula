@@ -3,7 +3,7 @@
   $servername = "localhost";
   $database = "nebula";
   $username = "root";
-  $password = "";
+  $password = "root";
 
   //criando conexão
   $conn = mysqli_connect($servername,$username, $password, $database);

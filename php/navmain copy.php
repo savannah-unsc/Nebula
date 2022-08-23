@@ -203,5 +203,7 @@ border: 0.5vh solid #2F3136;
 <div id="navbar">
   <form id="logo" action="home.php" method="post"><input id="logobtn" type="submit" value=""></form>
   <form action="pesquisa.php" method="get" id="pesquisa"><div id="buscainp"> <input id="inp" type="text" name="busca" required> <input id="buscabtn" type="submit" value="Buscar"> </div> </form>
+  <form id="chat" action="batepapo.php"> <input class="navbtn" type="submit" value=""> </form>
+  <form id="config" action="config.php"> <input class="navbtn" type="submit" value=""> </form>
   <div id="navicodiv"> <?php echo "<form id='navico' action='meuperfil.php' style='background-image: url(img/user_icons/$icone);'> <input class='navbtn' type='submit' value=''> </form>";?> </div>
 </div>
