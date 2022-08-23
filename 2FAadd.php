@@ -16,6 +16,10 @@ require "php/Authenticator.php";
 session_start();
 $id = $_SESSION['id'];
 
+if(isset($id) == false){
+	echo "<script> location.href='entrar.html'</script>";
+}
+
 $sql = "select * from login where id = $id";
 $query = mysqli_query($conn, $sql) or die ("Erro!");
 

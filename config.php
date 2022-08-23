@@ -13,6 +13,11 @@
   include 'php/conexao.php';
   session_start();
   $id = $_SESSION['id'];
+
+  if(isset($id) == false){
+    echo "<script> location.href='entrar.html'</script>";
+  }
+
   $sql = "select * from users where id='$id'";
   $result=mysqli_query($conn,$sql);
   while($tabela=mysqli_fetch_array($result))
@@ -20,7 +25,7 @@
     $icone = $tabela["icon"];
     $usuario = $tabela["usuario"];
   }
-  include 'php/navnoicons.php';
+  include 'php/navmain.php';
 ?>
 
   <h1 class="headerh1"> Conexões </h1>

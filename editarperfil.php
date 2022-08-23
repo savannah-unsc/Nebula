@@ -37,7 +37,7 @@ $seguidores = $tabela["seguidores"];
     <link rel='stylesheet' href='../css/estilo.css'>
   </head>
   <body>
-    <?php include 'php/navprofile.php';?>
+    <?php include 'php/navmain.php';?>
     <div id="perfil">
       <?php
 

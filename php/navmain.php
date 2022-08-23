@@ -126,7 +126,7 @@
     position: absolute;
     display: grid;
     visibility: hidden;
-    transition: 0.3s;
+    transition: 1s;
     transform: translateX(100%);
   }
   #lista.active{
@@ -135,6 +135,7 @@
   }
 
   #lista a {
+    
     font-size: 2vh;
     margin-top: 0.5vh;
     margin-bottom: 0.5vh;
@@ -271,10 +272,10 @@
   <div id="navicodiv"> <?php echo "<div id='navico' onClick='openmenu();' style='background-image: url(img/user_icons/$icone);'> </div>"; ?> </div>
 </div>
 <div id="lista">
-  <a href=""> Meu Perfil </a> <br>
-  <a href=""> Chat </a> <br>
-  <a href=""> Salvos </a> <br>
-  <a href=""> Notificações </a> <br>
-  <a href=""> Configurações </a> <br>
-  <a href=""> Sair </a>
+  <a href="../meuperfil.php"> Meu Perfil </a> <br>
+  <a href="../batepapo.php"> Bate Papo </a> <br>
+  <a href="#"> Itens Salvos </a> <br>
+  <a href="#"> Notificações </a> <br>
+  <a href="../config.php"> Configurações </a> <br>
+  <a href="../php/exit.php"> Sair </a>
 </div>
