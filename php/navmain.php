@@ -114,7 +114,8 @@
     background-color: #0000;
     border: hidden;
   }
-  #lista{
+
+  #lista {
     margin-left: 83vw;
     height: 25vh;
     width: 15vw;
@@ -124,8 +125,16 @@
     background-color: #202225;
     position: absolute;
     display: grid;
+    visibility: hidden;
+    transition: 0.3s;
+    transform: translateX(100%);
   }
-  #lista a{
+  #lista.active{
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  #lista a {
     font-size: 2vh;
     margin-top: 0.5vh;
     margin-bottom: 0.5vh;
@@ -134,7 +143,8 @@
     text-decoration: none;
     transition: 0.3s;
   }
-  #lista a:hover{
+
+  #lista a:hover {
     color: #afafaf;
   }
 
@@ -258,9 +268,9 @@
   <form action="pesquisa.php" method="get" id="pesquisa">
     <div id="buscainp"> <input id="inp" type="text" name="busca" required> <input id="buscabtn" type="submit" value="Buscar"> </div>
   </form>
-  <div id="navicodiv"> <?php echo "<form id='navico' onClick='openmenu();' style='background-image: url(img/user_icons/$icone);'> <input class='navbtn' type='button' onClick='openmenu();' value=''> </form>"; ?> </div>
+  <div id="navicodiv"> <?php echo "<div id='navico' onClick='openmenu();' style='background-image: url(img/user_icons/$icone);'> </div>"; ?> </div>
 </div>
-<div id="lista" style="visibility: hidden">
+<div id="lista">
   <a href=""> Meu Perfil </a> <br>
   <a href=""> Chat </a> <br>
   <a href=""> Salvos </a> <br>
@@ -268,15 +278,3 @@
   <a href=""> Configurações </a> <br>
   <a href=""> Sair </a>
 </div>
-
-<script>
-
-function openmenu(){
-if (document.getElementById('lista').style == "visibility: hidden") {
-  document.querySelector("#lista").setAttribute("style", "visibility: visible");
-} else {
-  document.querySelector("#lista").setAttribute("style", "visibility: hidden");
-}
-}
-
-</script>

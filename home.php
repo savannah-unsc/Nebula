@@ -169,5 +169,6 @@ echo "<div id='postagem'>
   <div></div>
   </div>
 <script type="text/javascript" src="js/imgprev.js"></script>
+<script type="text/javascript" src="js/menu.js"></script>
 </body>
 </html>
