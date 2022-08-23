@@ -10,7 +10,7 @@ require "Authenticator.php";
 
 if ($_SERVER['REQUEST_METHOD'] != "POST") {
     echo "<script> window.alert('Erro') </script>";
-    header("location: ../2FAadd.php");
+    header("location: ../2FA.php");
     die();
 }
 $Authenticator = new Authenticator();
@@ -20,7 +20,7 @@ $checkResult = $Authenticator->verifyCode($c2FA, $code, 2);
 if (!$checkResult) {
     $_SESSION['failed'] = true;
     echo "<script> window.alert('Erro') </script>";
-    header("location: ../2FAadd.php");
+    header("location: ../2FA.php");
     die();
 } 
 
