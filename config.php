@@ -19,13 +19,15 @@
   }
 
   $sql = "select * from users where id='$id'";
+
   $result=mysqli_query($conn,$sql);
-  while($tabela=mysqli_fetch_array($result))
-  {
-    $icone = $tabela["icon"];
-    $usuario = $tabela["usuario"];
-  }
-  include 'php/navmain.php';
+while($tabela=mysqli_fetch_array($result))
+{
+$icone = $tabela["icon"];
+$usuario = $tabela["usuario"];
+}
+    
+    include 'php/navmain.php';
 ?>
 
   <h1 class="headerh1"> Conexões </h1>

@@ -38,7 +38,19 @@ $bio = htmlspecialchars($bio);
     <link rel='stylesheet' href='../css/estilo.css'>
   </head>
   <body>
-    <?php include 'php/navmain.php';?>
+    <?php 
+    
+    $sql = "select * from users where id='$id'";
+
+$result=mysqli_query($conn,$sql);
+while($tabela=mysqli_fetch_array($result))
+{
+$icone = $tabela["icon"];
+$usuario = $tabela["usuario"];
+}
+    
+    include 'php/navmain.php';
+    ?>
     <div id="perfil">
       <?php
       echo "<div id='banner' style='background-image: url(../img/user_banners/$banner);'>

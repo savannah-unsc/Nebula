@@ -116,22 +116,23 @@
   }
 
   #lista {
-    margin-left: 83vw;
-    height: 25vh;
-    width: 15vw;
+    margin-left: 78.5vw;
+    height: 30vh;
+    width: 20vw;
     border-radius: 0.5vh;
     padding-top: 1.5vh;
     padding-bottom: 1.5vh;
     background-color: #202225;
     position: absolute;
     display: grid;
+    box-shadow:  -5px 5px 5px #0005;
     visibility: hidden;
-    transition: 1s;
-    transform: translateX(100%);
+    transition: 0.3s;
+    transform: translateX(125vw);
   }
   #lista.active{
     visibility: visible;
-    transform: translateX(0);
+    transform: translateX(0vw);
   }
 
   #lista a {
@@ -204,6 +205,14 @@
       border: 0.5vh solid #2F3136;
     }
 
+    #lista {
+    margin-left: 47vw;
+    height: 30vh;
+    width: 50vw;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+  }
+
   }
 
   @media only screen and (min-width: 1px) and (max-width: 425px) {
@@ -261,6 +270,14 @@
       border: 0.5vh solid #2F3136;
     }
 
+    #lista {
+    margin-left: 5vw;
+    height: 30vh;
+    width: 90vw;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+  }
+
   }
 </style>
 
@@ -279,3 +296,10 @@
   <a href="../config.php"> Configurações </a> <br>
   <a href="../php/exit.php"> Sair </a>
 </div>
+
+<script>
+function openmenu(){
+    const menuToggle = document.querySelector('#lista');
+    menuToggle.classList.toggle('active');
+}
+</script>
