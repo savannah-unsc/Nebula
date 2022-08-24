@@ -128,11 +128,11 @@
     box-shadow:  -5px 5px 5px #0005;
     visibility: hidden;
     transition: 0.3s;
-    transform: translateX(125vw);
+    transform: translateY(-110vw);
   }
   #lista.active{
     visibility: visible;
-    transform: translateX(0vw);
+    transform: translateY(0vw);
   }
 
   #lista a {

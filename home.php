@@ -10,8 +10,8 @@
   <body>
 
 <?php
-// ini_set('display_errors', 0);
-// error_reporting(0);
+ini_set('display_errors', 0);
+error_reporting(0);
 
 include 'php/conexao.php';
 
@@ -140,7 +140,7 @@ echo "<div id='postagem'>
   </div>
   <div>
   <p class='pubtxt'> $msg </p>
-  <form class='foto' action='post.php' target='_blank' method='get'>
+  <form class='foto' action='post.php' method='get'>
   <input type='hidden' name='publicacao' value='$postid'>
   <button type='submit' class='imabot'>
   <img src='posts/$midia' class='imageviewer'>
@@ -152,7 +152,7 @@ echo "<div id='postagem'>
   <form class='curtir'> </form>
   <div class='curtidas'> <h2> $curtidas </h2> </div>
   <form class='compartilhar'> </form>
-  <form class='pubview' action='post.php' target='_blank' method='get'>
+  <form class='pubview' action='post.php' method='get'>
   <input type='hidden' name='publicacao' value='$postid'>
   <input type='submit' value='Comentários' class='postvbtn'>
   </form>
