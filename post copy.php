@@ -16,7 +16,6 @@
 
     session_start();
     $id = $_SESSION['id'];
-    $busca = $_GET['busca'];
 
     $sql = "select * from users where id='$id'";
 
