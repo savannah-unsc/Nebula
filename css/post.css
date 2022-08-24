@@ -31,7 +31,12 @@
     margin-left: 1.5vw;
     border-radius: 100%;
     border: 0.5vh solid #40444B;
+    transition: 0.3s;
     display: grid;
+}
+
+#pubico:hover {
+    border-color: #2F3136;
 }
 
 #pubname {
@@ -44,14 +49,25 @@
 }
 
 #imagecont {
+    margin-left: auto;
+    margin-right: auto;
+    width: 38vw;
+    max-height: 50vh;
     text-align: center;
-    margin: auto;
-    background-color: aquamarine;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 3;
     grid-row-end: 8;
-    background-size: contain;
+    overflow-y: hidden;
+}
+
+#pubimg {
+    object-fit: contain;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    max-width: 38vw !important;
+    max-height: 50vh !important;
 }
 
 #pubtxt {
@@ -73,7 +89,54 @@
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 4;
-    grid-row-end: 9;
+    grid-row-end: 8;
+}
+
+.comentario {
+    min-height: 10vh;
+    width: 38vw;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #2F3136;
+    border-radius: 0.5vh;
+    display: grid;
+    grid-template-rows: 12vh auto;
+}
+
+.headconmsg {
+    display: grid;
+    grid-template-columns: 7vw 1fr;
+}
+
+.headconus {
+    margin-top: 2.5vh;
+}
+
+.conico {
+    height: 8vh;
+    width: 8vh;
+    border-radius: 100%;
+    border: 0.40vh solid #40444B;
+    margin-top: 1.60vh;
+    margin-left: 1vw;
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s;
+    display: grid;
+}
+
+.conico:hover {
+    border-color: #202225;
+}
+
+.conmsg {
+    margin-top: 1.5vh;
+    margin-bottom: 1.5vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    text-align: justify;
 }
 
 #comentbar {

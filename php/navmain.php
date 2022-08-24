@@ -125,18 +125,19 @@
     background-color: #202225;
     position: absolute;
     display: grid;
-    box-shadow:  -5px 5px 5px #0005;
+    box-shadow: -5px 5px 5px #0005;
     visibility: hidden;
     transition: 0.3s;
     transform: translateX(100vw);
   }
-  #lista.active{
+
+  #lista.active {
     visibility: visible;
     transform: translateX(0vw);
   }
 
   #lista a {
-    
+
     font-size: 2vh;
     margin-top: 0.5vh;
     margin-bottom: 0.5vh;
@@ -206,12 +207,12 @@
     }
 
     #lista {
-    margin-left: 47vw;
-    height: 30vh;
-    width: 50vw;
-    padding-top: 1.5vh;
-    padding-bottom: 1.5vh;
-  }
+      margin-left: 47vw;
+      height: 30vh;
+      width: 50vw;
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+    }
 
   }
 
@@ -271,12 +272,12 @@
     }
 
     #lista {
-    margin-left: 5vw;
-    height: 30vh;
-    width: 90vw;
-    padding-top: 1.5vh;
-    padding-bottom: 1.5vh;
-  }
+      margin-left: 5vw;
+      height: 30vh;
+      width: 90vw;
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+    }
 
   }
 </style>
@@ -291,15 +292,15 @@
 <div id="lista">
   <a href="../meuperfil.php"> Meu Perfil </a> <br>
   <a href="../batepapo.php"> Bate Papo </a> <br>
-  <a href="#"> Itens Salvos </a> <br>
+  <a href="../salvos.php"> Itens Salvos </a> <br>
   <a href="#"> Notificações </a> <br>
   <a href="../config.php"> Configurações </a> <br>
   <a href="../php/exit.php"> Sair </a>
 </div>
 
 <script>
-function openmenu(){
+  function openmenu() {
     const menuToggle = document.querySelector('#lista');
     menuToggle.classList.toggle('active');
-}
+  }
 </script>
