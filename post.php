@@ -10,14 +10,72 @@
   </head>
 
   <body>
-    <?php
+
+<?php
     // ini_set('display_errors', 0);
     // error_reporting(0);
 
-    include 'php/conexao.php';
+include 'php/conexao.php';
 
     session_start();
     $id = $_SESSION['id'];
+
+$postid = $_GET['publicacao'];
+
+$sql = "SELECT * FROM posts where id = $postid";
+
+$result = mysqli_query($conn, $sql);
+while ($tabela = mysqli_fetch_array($result)) {
+  $postid = $tabela['id'];
+  $publisherid = $tabela['user_id'];
+  $tipo = $tabela['tipo'];
+  $midia = $tabela['midia'];
+  $curtidas = $tabela['curtidas'];
+  $msg = base64_decode($tabela['conteudo']);
+  $msg = htmlspecialchars($msg);
+
+  $sqla = "SELECT * FROM users where id = $publisherid";
+  $resultado = mysqli_query($conn, $sqla);
+  if ($tabela = mysqli_fetch_array($resultado)) {
+    $publishername = $tabela['usuario'];
+    $publisheruid = $tabela['uid'];
+    $publishericon = $tabela['icon'];
+    $publisherbanner = $tabela['banner'];
+  }
+}
+
+if (isset($msg) == false) {
+  echo "<script> location.href='home.php'</script>";
+}
+
+?>
+
+  <div id="postmenubg" onclick="menupost()">
+    <form id="postmenu" action="php/salvarpost.php" method="post">
+      <?php
+
+$sql = "SELECT * from salvos where user_id = $id and post_id = $postid";
+$result=mysqli_query($conn,$sql);
+while($tabela=mysqli_fetch_array($result))
+{
+$validade = $tabela["id"];
+}
+
+if (isset($validade) == true) {
+  echo("<input class='pmbtn' type='submit' value='Remover dos Salvos'>");
+} else {
+  echo("<input class='pmbtn' type='submit' value='Salvar Postagem'>");
+}
+
+      echo("<input type='hidden' value='$postid' name='postarsalvar'>");
+      if ($tipo == 1) {
+        echo("<a href='posts/$midia' download> Salvar Imagem </a>"); 
+      } ?>
+      <button class="pmbtn" type="button"> Fechar </button>
+      </form>
+  </div>
+
+    <?php
 
     $sql = "select * from users where id='$id'";
 
@@ -31,38 +89,14 @@
     } else {
       include 'php/navmain.php';
     }
-
-    $postid = $_GET['publicacao'];
-
-    $sql = "SELECT * FROM posts where id = $postid";
-
-    $result = mysqli_query($conn, $sql);
-    while ($tabela = mysqli_fetch_array($result)) {
-      $postid = $tabela['id'];
-      $publisherid = $tabela['user_id'];
-      $tipo = $tabela['tipo'];
-      $midia = $tabela['midia'];
-      $curtidas = $tabela['curtidas'];
-      $msg = base64_decode($tabela['conteudo']);
-      $msg = htmlspecialchars($msg);
-
-      $sqla = "SELECT * FROM users where id = $publisherid";
-      $resultado = mysqli_query($conn, $sqla);
-      if ($tabela = mysqli_fetch_array($resultado)) {
-        $publishername = $tabela['usuario'];
-        $publisheruid = $tabela['uid'];
-        $publishericon = $tabela['icon'];
-        $publisherbanner = $tabela['banner'];
-      }
-    }
     ?>
     <form action="php/comentar.php" id="comentbar" method="post">
-      <input type="text" name="mensagem" id="comentartxt" placeholder="O que você tem a dizer?" maxlength="150">
+      <input type="text" name="mensagem" id="comentartxt" placeholder="O que você tem a dizer?" maxlength="150" required>
       <input type="hidden" name="postid" value="<?php echo ("$postid"); ?>">
       <input type="submit" value="Comentar" id="comentarbtn">
     </form>
 
-    <div id="corpo">
+    <div id="corpo" onclick="menupost();">
       <div id="profinfo">
         <?php echo ("<form id='pubico' action='perfil.php' style='background-image: url(img/user_icons/$publishericon)'>
         <input type='hidden' value='$publisherid' name='id'>
@@ -72,9 +106,9 @@
       <div id="imagecont">
         <?php 
         if ($tipo == 1) {
-          echo ("<a href='posts/$midia' target='_BLANK'>
+          echo ("<div>
           <img id='pubimg' src='posts/$midia'>
-          </a>");
+          </div>");
         } ?>
       </div>
       <div id="pubtxt">
@@ -115,6 +149,6 @@
       </div>
     </div>
 
+    <script src="js/menus"></script>
   </body>
-
   </html>

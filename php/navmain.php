@@ -298,9 +298,5 @@
   <a href="../php/exit.php"> Sair </a>
 </div>
 
-<script>
-  function openmenu() {
-    const menuToggle = document.querySelector('#lista');
-    menuToggle.classList.toggle('active');
-  }
+<script src="../js/menus.js">
 </script>

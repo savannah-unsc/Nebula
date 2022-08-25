@@ -17,14 +17,26 @@ session_start();
 $id = $_SESSION['id'];
 $msg = base64_encode($_POST['mensagem']);
 $postid = $_POST['postid'];
+$nodatamsg = $_POST['mensagem'];
 
-$sql = "INSERT INTO comments (user_id, post_id, msg) values('$id', '$postid', '$msg');";
-$query = mysqli_query($conn, $sql) or die ("<script> window.alert('Erro 2: Erro ao registrar usuário.') </script> <script> window.history.back() </script>");
-if (mysqli_affected_rows($conn)){
-echo "<script> location.href='../post.php?publicacao=$postid'</script>";
+function notsp($nodatamsg)
+{
+    $res = preg_replace('/\s+/', '', $nodatamsg);
+    return $res;
 }
-else {
-echo "<script> location.href='../post.php?publicacao=$postid'</script>";
+$notsp = notsp($nodatamsg);
+
+if ($notsp == "") {
+  echo "<script> location.href='../post.php?publicacao=$postid'</script>";
+} else {
+  $sql = "INSERT INTO comments (user_id, post_id, msg) values('$id', '$postid', '$msg');";
+  $query = mysqli_query($conn, $sql) or die ("<script> window.alert('Erro 2: Erro ao registrar usuário.') </script> <script> window.history.back() </script>");
+  if (mysqli_affected_rows($conn)){
+  echo "<script> location.href='../post.php?publicacao=$postid'</script>";
+  }
+  else {
+  echo "<script> location.href='../post.php?publicacao=$postid'</script>";
+  }
 }
 
 ?>

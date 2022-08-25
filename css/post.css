@@ -166,3 +166,45 @@
 #comentarbtn:hover {
     background-color: #2F3136;
 }
+
+#postmenubg{
+    position: absolute;
+    background-color: #0D0E0FAA;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    display: none;
+}
+#postmenubg.active{
+    display: block;
+}
+#postmenu{
+    background-color: #202225;
+    height: 15vh;
+    width: 15vw;
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 42.5vh;
+    border-radius: 0.5vh;
+    display: grid;
+    text-align: center;
+}
+#postmenu a{
+    color: #FFF;
+    margin-top: 1.75vh;
+    text-decoration: none;
+    transition: 0.3s;
+}
+#postmenu a:hover{
+    color: #AFAFAF;
+}
+.pmbtn{
+    color: #fff;
+    background-color: #0000;
+    border: none;
+    transition: 0.3s;
+}
+.pmbtn:hover{
+    color: #AFAFAF;
+}
