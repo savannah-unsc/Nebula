@@ -103,6 +103,19 @@ if ($tabela=mysqli_fetch_array($resultado)) {
 
 $msg = htmlspecialchars($msg);
 
+$sqlb = "SELECT * from likes where usuario = $id and post = $postid";
+    $res=mysqli_query($conn,$sqlb);
+    while($table=mysqli_fetch_array($res))
+    {
+        $curtval = $table["id"];
+    }
+
+if (isset($curtval) == true) {
+  $curtidasform = "<form class='curtirf' action='php/curtir.php' method='post'>";
+} else {
+  $curtidasform = "<form class='curtir' action='php/curtir.php' method='post'>";
+}
+
 if ($tipo == 0) {
 
 echo "<div id='postagem'>
@@ -118,10 +131,12 @@ echo "<div id='postagem'>
 </div>
 <div class='acoes'>
 <div></div>
-<form class='curtir'> </form>
+$curtidasform
+<input type='hidden' name='postid' value='$postid'>
+<input type='submit' value='' class='invbtn'>
+</form>
 <div class='curtidas'> <h2> $curtidas </h2> </div>
-<form class='compartilhar'> </form>
-<form class='pubview' action='post.php' target='_blank' method='get'>
+<form class='pubview' action='post.php' method='get'>
 <input type='hidden' name='publicacao' value='$postid'>
 <input type='submit' value='Comentários' class='postvbtn'>
 </form>
@@ -149,9 +164,11 @@ echo "<div id='postagem'>
   </div>
   <div class='acoes'>
   <div></div>
-  <form class='curtir'> </form>
-  <div class='curtidas'> <h2> $curtidas </h2> </div>
-  <form class='compartilhar'> </form>
+  <form class='curtir' action='php/curtir.php' method='post'>
+  <input type='hidden' name='postid' value='$postid'>
+  <input type='submit' value='' class='invbtn'>
+  </form>
+  $curtidasform
   <form class='pubview' action='post.php' method='get'>
   <input type='hidden' name='publicacao' value='$postid'>
   <input type='submit' value='Comentários' class='postvbtn'>

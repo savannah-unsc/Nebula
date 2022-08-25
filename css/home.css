@@ -150,7 +150,7 @@
 
 .acoes {
     display: grid;
-    grid-template-columns: 1vw 2.5vw 4.5vw 2.5vw auto;
+    grid-template-columns: 1vw 2.5vw 7vw auto;
 }
 
 .curtir {
@@ -160,11 +160,27 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    transition: 0.3s
+    transition: 0.3s;
+    display: grid;
 }
 
 .curtir:hover {
     background-image: url(../img/icons/fav_hover.png);
+}
+
+.curtirf {
+    margin-top: 1vh;
+    height: 3vh;
+    background-image: url(../img/icons/ffav.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: 0.3s;
+    display: grid;
+}
+
+.curtirf:hover {
+    background-image: url(../img/icons/ffav_hover.png);
 }
 
 .curtidas {
@@ -224,6 +240,11 @@
     max-height: 48vw;
     border-radius: 0.5vh;
     object-fit: cover;
+}
+
+.invbtn{
+    background-color: #0000;
+    border: none;
 }
 
 @media only screen and (min-width: 426px) and (max-width: 1024px) {
