@@ -17,21 +17,10 @@
   $idconvidado = $_POST['destinatario'];
   $msg = base64_encode($_POST['msg']);
   $nodatamsg = $_POST['postmsg'];
-  
-  function notsp($nodatamsg)
-{
-    $res = preg_replace('/\s+/', '', $nodatamsg);
-    return $res;
-}
-$notsp = notsp($nodatamsg);
 
 if(isset($id) == false){
   echo "<script> location.href='entrar.html'</script>";
 }
-
-if ($notsp == "") {
-  echo "<script> location.href='../batepapo.php?id=$idconvidado'</script>";
-} else {
   $data = date('Y-m-d');
   $hora = date('H');
   $newhora = $hora - 5;
@@ -46,7 +35,6 @@ echo "<script> location.href='../batepapo.php?id=$idconvidado'</script>";
 }
 else {
 echo "<script> location.href='../batepapo.php?id=$idconvidado'</script>";
-}
 }
 
 ?>

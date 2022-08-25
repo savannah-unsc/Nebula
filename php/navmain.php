@@ -1,9 +1,15 @@
 <style>
+  #space{
+    height: 10vh;
+  }
   #navbar {
     height: 10vh;
     width: 100vw;
     display: grid;
     grid-template-columns: 20vw 72.5vw 7.5vw;
+    position: fixed;
+    top: 0;
+    background-color: #08090aAA;
   }
 
   #logo {
@@ -123,7 +129,7 @@
     padding-top: 1.5vh;
     padding-bottom: 1.5vh;
     background-color: #202225;
-    position: absolute;
+    position: fixed;
     display: grid;
     box-shadow: -5px 5px 5px #0005;
     visibility: hidden;
@@ -152,6 +158,10 @@
   }
 
   @media only screen and (min-width: 426px) and (max-width: 1024px) {
+
+    #space{
+    height: 20vh;
+  }
 
     #navbar {
       height: 20vh;
@@ -218,6 +228,10 @@
 
   @media only screen and (min-width: 1px) and (max-width: 425px) {
 
+    #space{
+    height: 20vh;
+  }
+
     #navbar {
       height: 20vh;
       grid-template-columns: 40vw auto 10vw 10vw 20vw;
@@ -281,7 +295,7 @@
 
   }
 </style>
-
+<div id="space"></div>
 <div id="navbar">
   <form id="logo" action="home.php" method="post"><input id="logobtn" type="submit" value=""></form>
   <form action="pesquisa.php" method="get" id="pesquisa">
