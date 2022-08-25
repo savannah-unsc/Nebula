@@ -92,6 +92,18 @@ $midia = $tabela['midia'];
 $curtidas = $tabela['curtidas'];
 $msg = base64_decode($tabela['conteudo']);
 
+if ($curtidas >= 1000) {
+  $curtidas = $curtidas / 1000;
+  $curtidas = number_format($curtidas, 1, '.', '');
+  $curtidas = "$curtidas<b>k</b>";
+}
+
+if ($curtidas >= 1000000) {
+  $curtidas = $curtidas / 1000;
+  $curtidas = number_format($curtidas, 1, '.', '');
+  $curtidas = "$curtidas<b>M</b>";
+}
+
 $sqla = "SELECT * FROM users where id = $publisherid";
 $resultado=mysqli_query($conn,$sqla);
 if ($tabela=mysqli_fetch_array($resultado)) {
@@ -101,20 +113,20 @@ if ($tabela=mysqli_fetch_array($resultado)) {
   $publisherbanner = $tabela['banner'];
 }
 
-$msg = htmlspecialchars($msg);
-
 $sqlb = "SELECT * from likes where usuario = $id and post = $postid";
     $res=mysqli_query($conn,$sqlb);
     while($table=mysqli_fetch_array($res))
     {
-        $curtval = $table["id"];
+        $curtval = $table["post"];
     }
 
-if (isset($curtval) == true) {
+if ($curtval == $postid) {
   $curtidasform = "<form class='curtirf' action='php/curtir.php' method='post'>";
 } else {
   $curtidasform = "<form class='curtir' action='php/curtir.php' method='post'>";
 }
+
+$msg = htmlspecialchars($msg);
 
 if ($tipo == 0) {
 
@@ -164,11 +176,11 @@ $curtidasform
   </div>
   <div class='acoes'>
   <div></div>
-  <form class='curtir' action='php/curtir.php' method='post'>
+  $curtidasform
   <input type='hidden' name='postid' value='$postid'>
   <input type='submit' value='' class='invbtn'>
   </form>
-  $curtidasform
+  <div class='curtidas'> <h2> $curtidas </h2> </div>
   <form class='pubview' action='post.php' method='get'>
   <input type='hidden' name='publicacao' value='$postid'>
   <input type='submit' value='Comentários' class='postvbtn'>
