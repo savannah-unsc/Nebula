@@ -6,11 +6,7 @@
 }
 
 body {
-    background-color: #0D0E0F;
-    background-image: url(../img/bgs/default.png);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-color: #111214;
     font-family: Poppins, sans-serif;
     font-size: 1.6vh;
     color: #fff;

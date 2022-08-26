@@ -96,7 +96,7 @@
     color: #B9BBBE;
 }
 
-@media only screen and (min-width: 426px) and (max-width: 1024px) {
+@media screen and (min-device-width: 430px) and (max-device-width: 1024px) {
 
     #logo {
         background-size: 35vw;
@@ -122,7 +122,7 @@
 
 }
 
-@media only screen and (max-width: 425px) {
+    @media screen and (max-device-width: 429px) {
 
     #logo {
         background-size: 50vw;

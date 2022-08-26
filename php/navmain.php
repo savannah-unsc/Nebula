@@ -9,7 +9,7 @@
     grid-template-columns: 20vw 72.5vw 7.5vw;
     position: fixed;
     top: 0;
-    background-color: #08090aAA;
+    background-color: #111214AA;
   }
 
   #logo {
@@ -134,12 +134,12 @@
     box-shadow: -5px 5px 5px #0005;
     visibility: hidden;
     transition: 0.3s;
-    transform: translateX(100vw);
+    transform: translateY(100vh);
   }
 
   #lista.active {
     visibility: visible;
-    transform: translateX(0vw);
+    transform: translateY(0vh);
   }
 
   #lista a {
@@ -157,7 +157,7 @@
     color: #afafaf;
   }
 
-  @media only screen and (min-width: 426px) and (max-width: 1024px) {
+  @media screen and (min-device-width: 430px) and (max-device-width: 1024px) {
 
     #space{
     height: 20vh;
@@ -226,7 +226,7 @@
 
   }
 
-  @media only screen and (min-width: 1px) and (max-width: 425px) {
+@media screen and (max-device-width: 429px) {
 
     #space{
     height: 20vh;
