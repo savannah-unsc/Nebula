@@ -45,7 +45,7 @@ while ($tabela = mysqli_fetch_array($result)) {
 }
 
 if (isset($msg) == false) {
-  echo "<script> location.href='home.php'</script>";
+  echo "<script> location.href='principal.php'</script>";
 }
 
 ?>

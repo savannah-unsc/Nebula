@@ -45,7 +45,7 @@ if ($v2FA == 1) {
   $_SESSION['id'] = $id;
 
   if (mysqli_affected_rows($conn)){
-    echo "<script> location.href='../home.php'</script>";
+    echo "<script> location.href='../principal.php'</script>";
     }
     else{
     echo "<script> window.alert('Email ou Senha incorretos!') </script>";

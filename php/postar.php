@@ -28,7 +28,7 @@ function notsp($nodatamsg)
 $notsp = notsp($nodatamsg);
 
 if ($notsp == "") {
-  echo "<script> location.href='../home.php'</script>";
+  echo "<script> location.href='../principal.php'</script>";
 } else {
 
   if ($mediaex != "") {
@@ -40,21 +40,21 @@ if ($notsp == "") {
     $sql = "INSERT INTO posts (user_id, tipo, midia, conteudo) values('$id', 1, '$median', '$postmsg')";
     $query = mysqli_query($conn, $sql) or die ("<script> window.alert('Erro ao fazer postagem.') </script> <script> window.history.back() </script>");
     if (mysqli_affected_rows($conn)){
-      echo "<script> location.href='../home.php'</script>";
+      echo "<script> location.href='../principal.php'</script>";
     }
     else {
       echo "<script> window.alert('Erro fazer postagem.') </script>";
-      echo "<script> location.href='../home.php'</script>";
+      echo "<script> location.href='../principal.php'</script>";
     }
   } else {
     $sql = "INSERT INTO posts (user_id, conteudo) values('$id', '$postmsg')";
     $query = mysqli_query($conn, $sql) or die ("<script> window.alert('Erro ao fazer postagem.') </script> <script> window.history.back() </script>");
     if (mysqli_affected_rows($conn)){
-      echo "<script> location.href='../home.php'</script>";
+      echo "<script> location.href='../principal.php'</script>";
     }
     else {
       echo "<script> window.alert('Erro fazer postagem.') </script>";
-      echo "<script> location.href='../home.php'</script>";
+      echo "<script> location.href='../principal.php'</script>";
     }
   }
 

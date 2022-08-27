@@ -30,7 +30,25 @@ if ($notsp == "") {
   echo "<script> location.href='../post.php?publicacao=$postid'</script>";
 } else {
   $sql = "INSERT INTO comments (user_id, post_id, msg) values('$id', '$postid', '$msg');";
-  $query = mysqli_query($conn, $sql) or die ("<script> window.alert('Erro 2: Erro ao registrar usuário.') </script> <script> window.history.back() </script>");
+  $query = mysqli_query($conn, $sql) or die ("<script> window.alert('Erro') </script> <script> window.history.back() </script>");
+  
+  $sqla = "select * from posts where id = $postid";
+  $resultado=mysqli_query($conn,$sqla);
+  while($table=mysqli_fetch_array($resultado))
+  {
+    $dest = $table["user_id"];
+  }
+
+  $sql = "select * from comments where user_id = $id and post_id = $postid and msg = '$msg'";
+  $result=mysqli_query($conn,$sql);
+  while($tabela=mysqli_fetch_array($result))
+  {
+    $inter = $tabela["id"];
+  }
+
+  $sql = "INSERT INTO notifications (destinatario, remetente, interacao, tipo) values('$dest', '$id', '$inter', 0);";
+  $query = mysqli_query($conn, $sql) or die ("<script> window.alert('Erro') </script> <script> window.history.back() </script>");
+
   if (mysqli_affected_rows($conn)){
   echo "<script> location.href='../post.php?publicacao=$postid'</script>";
   }

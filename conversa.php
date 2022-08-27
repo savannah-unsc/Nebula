@@ -71,7 +71,7 @@ if ($idchat == $id) {
 
 <div id="corpo">
 <div id="cont">
-<form id="nebulahome" action="home.php">
+<form id="nebulahome" action="principal.php">
 <input type="submit" value="" id="invbtn">
 </form>
 <div>
@@ -241,6 +241,9 @@ while($tabela=mysqli_fetch_array($resultado))
     
 
 }
+
+$sql = "UPDATE chat set lida= 1 where destinatario='$id' and remetente = '$idchat'";
+$query = mysqli_query($conn, $sql) or die ("");
 
 ?>
 </div>

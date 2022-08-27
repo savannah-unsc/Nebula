@@ -41,7 +41,7 @@ color: #AFAFAF;
 </style>
 
 <div id="navbar">
-  <form id="logo" action="home.php" method="post"><input id="logobtn" type="submit" value=""></form>
+  <form id="logo" action="principal.php" method="post"><input id="logobtn" type="submit" value=""></form>
   <div></div>
   <form id="login" action="entrar.html"> <input class="navbtn" type="submit" value="Entrar"> </form>
 </div>

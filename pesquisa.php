@@ -36,11 +36,11 @@ function notsp($busca2)
 $notsp = notsp($busca2);
 
 if ($notsp == "") {
-  echo "<script> location.href='../home.php'</script>";
+  echo "<script> location.href='../principal.php'</script>";
 }
 
 if(isset($busca) == false){
-	include 'home.php';
+	include 'principal.php';
 }
 
 if(isset($id) == false){

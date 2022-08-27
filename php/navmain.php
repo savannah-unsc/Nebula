@@ -297,18 +297,18 @@
 </style>
 <div id="space"></div>
 <div id="navbar">
-  <form id="logo" action="home.php" method="post"><input id="logobtn" type="submit" value=""></form>
+  <form id="logo" action="principal.php" method="post"><input id="logobtn" type="submit" value=""></form>
   <form action="pesquisa.php" method="get" id="pesquisa">
     <div id="buscainp"> <input id="inp" type="text" name="busca" required> <input id="buscabtn" type="submit" value="Buscar"> </div>
   </form>
   <div id="navicodiv"> <?php echo "<div id='navico' onClick='openmenu();' style='background-image: url(img/user_icons/$icone);'> </div>"; ?> </div>
 </div>
 <div id="lista">
-  <a href="../home.php"> Página Inicial </a> <br>
+  <a href="../principal.php"> Página Inicial </a> <br>
   <a href="../meuperfil.php"> Meu Perfil </a> <br>
   <a href="../contatos.php"> Bate Papo </a> <br>
   <a href="../salvos.php"> Itens Salvos </a> <br>
-  <a href="#"> Notificações </a> <br>
+  <a href="../notif.php"> Notificações </a> <br>
   <a href="../config.php"> Configurações </a> <br>
   <a href="../php/exit.php"> Sair </a>
 </div>

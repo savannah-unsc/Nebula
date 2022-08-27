@@ -19,7 +19,7 @@ session_start();
 $id = $_SESSION['id'];
 
 if(isset($id)){
-	echo "<script> location.href='home.php'</script>";
+	echo "<script> location.href='principal.php'</script>";
 } else {
   echo "<script> location.href='entrar.html'</script>";
 }

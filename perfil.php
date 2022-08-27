@@ -30,7 +30,7 @@ $seguidores = $tabela["seguidores"];
 $bio = htmlspecialchars($bio);
 
 if (isset($usuario) == false) {
-  echo "<script> location.href='home.php'</script>";
+  echo "<script> location.href='principal.php'</script>";
 }
 
 ?>

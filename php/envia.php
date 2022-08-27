@@ -28,8 +28,19 @@ if(isset($id) == false){
   $hora = "$newhora:$min";
   $datahora = "$data $hora";
 
-  $sql = "INSERT INTO chat (remetente, destinatario, mensagem, datahora) values ($id, $idconvidado, '$msg', '$datahora')";
-$query = mysqli_query($conn, $sql) or die ("<script> window.alert('Erro 2: Erro ao registrar usuário.') </script> <script> location.href='../chat.php?id=$idconvidado </script>");
+$sql = "INSERT INTO chat (remetente, destinatario, mensagem, datahora) values ($id, $idconvidado, '$msg', '$datahora')";
+$query = mysqli_query($conn, $sql) or die ("<script> window.alert('Erro') </script> <script> location.href='../chat.php?id=$idconvidado </script>");
+
+$sqla = "select * from chat where remetente = $id and destinatario = $idconvidado and mensagem = '$msg' and datahora = '$datahora'";
+$resultado=mysqli_query($conn,$sqla);
+while($table=mysqli_fetch_array($resultado))
+{
+  $notid = $table["id"];
+}
+
+$sql = "INSERT INTO notifications (destinatario, remetente, interacao, tipo) values('$idconvidado', '$id', '$notid', 1);";
+$query = mysqli_query($conn, $sql) or die ("<script> window.alert('Erro') </script> <script> window.history.back() </script>");
+
 if (mysqli_affected_rows($conn)){
 echo "<script> location.href='../conversa.php?id=$idconvidado'</script>";
 }
