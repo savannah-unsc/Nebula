@@ -298,7 +298,7 @@
 
     .acoes {
         display: grid;
-        grid-template-columns: 1.5vw 2.5vw 4.5vw 2.5vw auto;
+        grid-template-columns: 1.5vw 2.5vw 7vw auto;
     }
 
     .postvbtn {
@@ -372,7 +372,7 @@
     }
 
     .acoes {
-        grid-template-columns: 2.5vw 5vw 10vw 5vw auto;
+        grid-template-columns: 2.5vw 5vw 15vw auto;
     }
 
     .postvbtn {

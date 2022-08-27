@@ -141,7 +141,7 @@
 
 .acoes {
     display: grid;
-    grid-template-columns: 1vw 2.5vw 4.5vw 2.5vw auto;
+    grid-template-columns: 1vw 2.5vw 7vw auto;
 }
 
 .curtir {
@@ -151,11 +151,27 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    transition: 0.3s
+    transition: 0.3s;
+    display: grid;
 }
 
 .curtir:hover {
     background-image: url(../img/icons/fav_hover.png);
+}
+
+.curtirf {
+    margin-top: 1vh;
+    height: 3vh;
+    background-image: url(../img/icons/ffav.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: 0.3s;
+    display: grid;
+}
+
+.curtirf:hover {
+    background-image: url(../img/icons/ffav_hover.png);
 }
 
 .curtidas {
@@ -217,6 +233,11 @@
     object-fit: cover;
 }
 
+.invbtn{
+    background-color: #0000;
+    border: none;
+}
+
 @media screen and (min-device-width: 430px) and (max-device-width: 1024px) {
 
     #username {
@@ -262,7 +283,7 @@
 
     .acoes {
         display: grid;
-        grid-template-columns: 1.5vw 2.5vw 4.5vw 2.5vw auto;
+        grid-template-columns: 1.5vw 2.5vw 7vw auto;
     }
 
     .postvbtn {
@@ -324,7 +345,7 @@
     }
 
     .acoes {
-        grid-template-columns: 2.5vw 5vw 10vw 5vw auto;
+        grid-template-columns: 2.5vw 5vw 15vw auto;
     }
 
     .postvbtn {

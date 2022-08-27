@@ -95,6 +95,7 @@ if (isset($validade) == true) {
       <input type="hidden" name="postid" value="<?php echo ("$postid"); ?>">
       <input type="submit" value="Comentar" id="comentarbtn">
     </form>
+    <div id="gbr"></div>
 
     <div id="corpo" onclick="menupost();">
       <div id="profinfo">

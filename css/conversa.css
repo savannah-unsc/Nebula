@@ -1,0 +1,218 @@
+#corpo {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 30vw 70vw;
+}
+
+#cont {
+    background-image: linear-gradient(to left, #0000, #202225, #202225);
+    display: grid;
+    grid-template-rows: 12.5vh 87.5vh;
+}
+
+#nebulahome {
+    background-image: url(../img/logos/white.png);
+    background-position: center;
+    background-size: 23.5vw;
+    background-repeat: no-repeat;
+    display: grid;
+    transition: 0.3s;
+}
+#nebulahome:hover {
+    background-image: url(../img/logos/gray.png);
+}
+
+#invbtn {
+    background-color: #0000;
+    border: none;
+}
+
+.contato {
+    height: 45vh;
+    width: 28vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #40444B;
+    border-radius: 0.5vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    display: grid;
+    grid-template-rows: 30vh 15vh;
+}
+
+.convban {
+    background-position: center;
+    background-size: cover;
+}
+
+.convico {
+    height: 20vh;
+    width: 20vh;
+    border: 0.75vh solid #202225;
+    border-radius: 100%;
+    margin-top: 4.25vh;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: center;
+    background-size: cover;
+    display: grid;
+}
+
+.invbtn {
+    background-color: #0000;
+    border: none;
+}
+
+.chatbtn {
+    background-color: #2F3136;
+    border: none;
+    transition: 0.3s;
+}
+
+.chatbtn:hover {
+    background-color: #40444B;
+}
+
+#chat {
+    display: grid;
+    grid-template-rows: 15vh 75vh;
+}
+
+#nav {
+    display: grid;
+    grid-template-columns: 35vw 35vw;
+}
+
+#chatban {
+    background-position: center;
+    background-size: cover;
+}
+
+#chaticon {
+    height: 10vh;
+    width: 10vh;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 100%;
+    border: 0.5vh solid #202225;
+    display: grid;
+    background-position: center;
+    background-size: cover;
+    margin-top: 2vh;
+}
+
+#navbtn {
+    background-color: #2F3136;
+    border: none;
+    transition: 0.3s;
+}
+
+#navbtn:hover {
+    background-color: #40444B;
+}
+
+#tbox {
+    position: fixed;
+    display: grid;
+    height: 5vh;
+    width: 68vw;
+    margin-left: 31vw;
+    margin-top: 92.5vh;
+    grid-template-columns: auto 5vw;
+    border: none;
+    border-radius: 0.5vh;
+}
+
+#ctxt {
+    background-color: #2F3136;
+    border: none;
+    border-radius: 0.5vh;
+    padding-left: 0.75vw;
+    resize: none;
+    padding-top: 1.2vh;
+}
+
+#envtxt {
+    background-image: url(../img/icons/send.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #0000;
+    border: none;
+    transition: 0.3s;
+}
+
+#envtxt:hover {
+    background-image: url(../img/icons/send_hover.png);
+}
+
+.msg {
+    height: auto;
+    width: 67vw;
+    margin-left: 1.5vw;
+}
+
+.spmsg {
+    margin-top: 2.5vh;
+}
+
+.tempo {
+    float: right;
+}
+
+#scroll {
+    height: auto;
+    overflow: scroll;
+}
+
+@media screen and (min-device-width: 430px) and (max-device-width: 1024px) {
+
+    #corpo {
+        grid-template-columns: 0vw 100vw;
+    }
+
+    #nav {
+        grid-template-columns: 45vw 55vw;
+    }
+
+    #tbox {
+        width: 98vw;
+        margin-left: 1vw;
+        grid-template-columns: auto 10vw;
+    }
+
+    .msg {
+        width: 97vw;
+    }
+
+}
+
+@media screen and (max-device-width: 429px) {
+
+    #corpo {
+        grid-template-columns: 0vw 100vw;
+    }
+    
+    #chat {
+        grid-template-rows: 20vh 75vh;
+    }
+    
+    #nav {
+        grid-template-columns: 100vw;
+        grid-template-rows: 15vh 5vh;
+    }
+    #nav h1{
+        font-size: 2.4vh;
+    }
+    
+    #tbox {
+        width: 98vw;
+        margin-left: 1vw;
+        grid-template-columns: auto 20vw;
+    }
+    
+    .msg {
+        width: 97vw;
+    }
+
+}

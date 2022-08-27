@@ -37,7 +37,14 @@ $seguidores = $tabela["seguidores"];
     <link rel='stylesheet' href='../css/estilo.css'>
   </head>
   <body>
-    <?php include 'php/navmain.php';?>
+    <?php 
+    $result=mysqli_query($conn,$sql);
+    while($tabela=mysqli_fetch_array($result))
+    {
+    $icone = $tabela["icon"];
+    $usuario = $tabela["usuario"];
+    }
+    include 'php/navmain.php';?>
     <div id="perfil">
       <?php
 

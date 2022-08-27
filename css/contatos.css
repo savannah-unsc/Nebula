@@ -1,0 +1,76 @@
+#corpo {
+    height: auto;
+    width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contato {
+    height: 45vh;
+    width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #40444B;
+    border-radius: 0.5vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    display: grid;
+    grid-template-rows: 30vh 15vh;
+}
+
+.convban {
+    background-position: center;
+    background-size: cover;
+}
+
+.convico {
+    height: 20vh;
+    width: 20vh;
+    border: 0.75vh solid #202225;
+    border-radius: 100%;
+    margin-top: 4.25vh;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: center;
+    background-size: cover;
+    display: grid;
+}
+
+.invbtn {
+    background-color: #0000;
+    border: none;
+}
+
+.chatbtn {
+    background-color: #2F3136;
+    border: none;
+    transition: 0.3s;
+}
+
+.chatbtn:hover {
+    background-color: #40444B;
+}
+
+@media screen and (min-device-width: 430px) and (max-device-width: 1024px) {
+
+    #corpo {
+        width: 70vw;
+    }
+
+    .contato {
+        width: 70vw;
+    }
+
+}
+
+@media screen and (max-device-width: 429px) {
+
+    #corpo {
+        width: 90vw;
+    }
+
+    .contato {
+        width: 90vw;
+    }
+
+}

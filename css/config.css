@@ -148,3 +148,103 @@
 #vbtn:hover {
     background-color: #40444B;
 }
+
+@media screen and (min-device-width: 430px) and (max-device-width: 1024px) {
+    
+    .confmenu {
+        width: 90vw;
+        grid-template-columns: 25vw 47.5vw 17.5vw;
+    }
+    
+    .confmenu2 {
+        width: 90vw;
+        grid-template-columns: 25vw 47.5vw 17.5vw;
+    }
+    
+    .title {
+        margin-top: 10vh;
+    }
+    
+    .title2l {
+        margin-top: 7vh;
+    }
+    
+    .title3 {
+        margin-top: 20vh;
+    }
+    
+    #lolinp {
+        width: 40vw;
+    }
+    
+    #exitbtn {
+        width: 15vw;
+    }
+    
+    .inp {
+        width: 40vw;
+        grid-template-columns: 32.5vw 7.5vw;
+    }
+    
+    .inpf {
+        width: 40vw;
+        grid-template-columns: 40vw;
+    }
+}
+@media screen and (max-device-width: 429px) {
+
+    .confmenu {
+        height: 40vh;
+        width: 90vw;
+        grid-template-columns: 90vw;
+        grid-template-rows: 15vh auto 5vh;
+    }
+    
+    .confmenu2 {
+        height: 57vh;
+        width: 90vw;
+        grid-template-columns: 90vw;
+        grid-template-rows: 15vh auto 5vh;
+    }
+    
+    .title {
+        margin-top: 2vh;
+        width: 90vw;
+    }
+
+    .conmenu h1{
+        margin-top: 7.5vh!important;
+    }
+    
+    .title2l {
+        margin-top: 2.5vh;
+        width: 90vw;
+    }
+    
+    .title3 {
+        margin-top: 2vh;
+        width: 90vw;
+    }
+    
+    #lolinp {
+        margin-top: 7.5vh;
+        width: 70vw;
+    }
+    
+    #exitbtn {
+        width: 30vw;
+    }
+    
+    .inp {
+        margin-top: 2;
+        width: 70vw;
+        grid-template-columns: 55vw 15vw;
+    }
+    
+    .inpf {
+        margin-top: 4vh;
+        width: 70vw;
+        grid-template-columns: 70vw;
+    }
+
+}

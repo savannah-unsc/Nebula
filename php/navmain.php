@@ -123,7 +123,7 @@
 
   #lista {
     margin-left: 78.5vw;
-    height: 30vh;
+    height: 40vh;
     width: 20vw;
     border-radius: 0.5vh;
     padding-top: 1.5vh;
@@ -134,7 +134,7 @@
     box-shadow: -5px 5px 5px #0005;
     visibility: hidden;
     transition: 0.3s;
-    transform: translateY(100vh);
+    transform: translateY(-100vh);
   }
 
   #lista.active {
@@ -218,7 +218,7 @@
 
     #lista {
       margin-left: 47vw;
-      height: 30vh;
+      height: 40vh;
       width: 50vw;
       padding-top: 1.5vh;
       padding-bottom: 1.5vh;
@@ -287,7 +287,7 @@
 
     #lista {
       margin-left: 5vw;
-      height: 30vh;
+      height: 40vh;
       width: 90vw;
       padding-top: 1.5vh;
       padding-bottom: 1.5vh;
@@ -304,8 +304,9 @@
   <div id="navicodiv"> <?php echo "<div id='navico' onClick='openmenu();' style='background-image: url(img/user_icons/$icone);'> </div>"; ?> </div>
 </div>
 <div id="lista">
+  <a href="../home.php"> Página Inicial </a> <br>
   <a href="../meuperfil.php"> Meu Perfil </a> <br>
-  <a href="../batepapo.php"> Bate Papo </a> <br>
+  <a href="../contatos.php"> Bate Papo </a> <br>
   <a href="../salvos.php"> Itens Salvos </a> <br>
   <a href="#"> Notificações </a> <br>
   <a href="../config.php"> Configurações </a> <br>

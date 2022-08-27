@@ -58,3 +58,51 @@
 #codebtn:hover {
     background-color: #2F3136;
 }
+
+@media screen and (min-device-width: 430px) and (max-device-width: 1024px) {
+    #corpo {
+        width: 50vw;
+    }
+
+    #corpo2 {
+        width: 50vw;
+    }
+
+    #code {
+        background-size: 45vw;
+    }
+
+    #codeinp {
+        width: 45vw;
+    }
+
+    #codebtn {
+        width: 25vw;
+    }
+
+}
+
+@media screen and (max-device-width: 429px) {
+
+    #corpo {
+        grid-template-rows: 14vh auto 7vh 7vh;
+        width: 90vw;
+    }
+
+    #corpo2 {
+        width: 90vw;
+    }
+
+    #code {
+        background-size: 85vw;
+    }
+
+    #codeinp {
+        width: 75vw;
+    }
+
+    #codebtn {
+        width: 50vw;
+    }
+
+}

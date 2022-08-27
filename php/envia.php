@@ -31,10 +31,10 @@ if(isset($id) == false){
   $sql = "INSERT INTO chat (remetente, destinatario, mensagem, datahora) values ($id, $idconvidado, '$msg', '$datahora')";
 $query = mysqli_query($conn, $sql) or die ("<script> window.alert('Erro 2: Erro ao registrar usuário.') </script> <script> location.href='../chat.php?id=$idconvidado </script>");
 if (mysqli_affected_rows($conn)){
-echo "<script> location.href='../batepapo.php?id=$idconvidado'</script>";
+echo "<script> location.href='../conversa.php?id=$idconvidado'</script>";
 }
 else {
-echo "<script> location.href='../batepapo.php?id=$idconvidado'</script>";
+echo "<script> location.href='../conversa.php?id=$idconvidado'</script>";
 }
 
 ?>
