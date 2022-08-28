@@ -32,6 +32,7 @@ $mainuid = $tabela["uid"];
 }
 
 $idchat = $_GET['id'];
+$_SESSION['idchat'] = $idchat;
 
 if (isset($idchat) == false) {
     $idchat = $id;
@@ -57,11 +58,10 @@ if ($idchat == $id) {
     </form>
 ");
 } else {
-    echo("<form action='php/envia.php' method='post' id='tbox'>
-    <textarea type='text' maxlength='450' name='msg' id='ctxt' placeholder='O que você tem a dizer?' required> </textarea>
-    <!--input type='text' maxlength='450' name='msg' id='ctxt' placeholder='O que você tem a dizer?' required-->
+    echo("<form action='php/envia.php' method='post' id='tbox' target='_BLANK'>
+    <textarea maxlength='450' name='msg' id='ctxt' placeholder='O que você tem a dizer?'></textarea>
     <input type='hidden' value='$idchat' name='destinatario'>
-    <input type='submit' value='' id='envtxt'>
+    <input type='submit' value='' id='envtxt' onclick='limpar()'>
     </form>
 ");
 }
@@ -132,128 +132,24 @@ echo("<form action='perfil.php' id='nav'>
 </button>
 </form>");
 ?>
-<div id="msgboxs">
-<?php
-
-$sql = "select * from chat where remetente = $idchat and destinatario = $id or remetente = $id and destinatario = $idchat order by datahora";
-
-$resultado=mysqli_query($conn,$sql);
-while($tabela=mysqli_fetch_array($resultado))
-{
-    $idr = $tabela["remetente"];
-    $msg = base64_decode($tabela["mensagem"]);
-    $datahora = $tabela["datahora"];
-
-    $ano = date('Y');
-            $mes = date('m');
-            $dia = date('d');
-            $anomsg = substr($datahora, 0, 4);
-            $mesmsg = substr($datahora, 5, 2);
-            $diamsg = substr($datahora, 8, 2);
-            $horamsg = substr($datahora, 11, 5);
-            $tempo = "0";
-
-            switch ($mesmsg) {
-              case 1:
-                $mesmsgs = "jan";
-              break;
-              case 2:
-                $mesmsgs = "fev";
-              break;
-              case 3:
-                $mesmsgs = "mar";
-              break;
-              case 4:
-                $mesmsgs = "abr";
-              break;
-              case 5:
-                $mesmsgs = "mai";
-              break;
-              case 6:
-                $mesmsgs = "jun";
-              break;
-              case 7:
-                $mesmsgs = "jul";
-              break;
-              case 8:
-                $mesmsgs = "ago";
-              break;
-              case 9:
-                $mesmsgs = "set";
-              break;
-              case 10:
-                $mesmsgs = "out";
-              break;
-              case 11:
-                $mesmsgs = "nov";
-              break;
-              case 12:
-                $mesmsgs = "dez";
-              break;
-            }
-
-            if ($dia == $diamsg and $mes == $mesmsg and $ano == $anomsg) {
-              $tempo = "Hoje às $horamsg";
-            } else {
-              if ($mes == "$mesmsg" and $ano == $anomsg) {
-                $tempo = "Dia $diamsg às $horamsg";
-              } else {
-                if ($ano == $anomsg) {
-                  $tempo = "$diamsg de $mesmsgs. às $horamsg";
-                } else {
-                  $tempo = "$diamsg/$mesmsg/$anomsg às $horamsg";
-                }
-              }
-            }
-
-    if ($id == $idr) {
-        $color = "#A569BD";
-        $user = $mainuser;
-        $uid = $mainuid;
-        $idmsg = $id;
-      } else {
-        $color = "#1ABC9C";
-        $user = $chatuser;
-        $uid = $chatuid;
-        $idmsg = $idr;
-      }
-
-    if ($lastid != $idmsg) {
-      echo "<div class='spmsg'> </div>
-      <div class='msg'>
-              <h3 style='color: $color;'> $user#$uid <b class='tempo gray'>$tempo</b></h3>
-              <p> $msg </p>
-            </div>";
-            $lastid = $idmsg;
-            $contador = 0;
-    } else {
-      echo "<div class='msg'>
-              <p> $msg </p>
-            </div>";
-            $lastid = $idmsg;
-            $contador = $contador + 1;
-
-            if ($contador > 3) {
-              $contador = 0;
-              $lastid = 0;
-            }
-    }
-    
-
-}
-
-$sql = "UPDATE chat set lida= 1 where destinatario='$id' and remetente = '$idchat'";
-$query = mysqli_query($conn, $sql) or die ("");
-
-?>
+<div id="msgboxs" class="msgbox">
 </div>
 </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="js/chatload.js"></script>
 <script>
-
 var objDiv = document.getElementById("msgboxs");
 objDiv.scrollTop = objDiv.scrollHeight;
+
+function limpar(){
+    setTimeout(limpeza, 500);
+    function limpeza(){
+        objDiv.scrollTop = objDiv.scrollHeight;
+        document.getElementById('ctxt').value='';
+    }
+}
 
 </script>
 

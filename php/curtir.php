@@ -41,11 +41,11 @@ if (isset($validade) == true) {
     $query = mysqli_query($conn, $sql) or die ("Erro!");
 
     if (mysqli_affected_rows($conn)){
-    echo "<script> window.history.back() </script>";
+      echo "<script> window.close() </script>";
     }
     else{
     echo "<script> window.alert('Erro!') </script>";
-    echo "<script> window.history.back() </script>";
+    echo "<script> window.close() </script>";
     }
 } else {
     $sql = "INSERT INTO likes (usuario, post) values($id, $postid)";
@@ -63,11 +63,11 @@ if (isset($validade) == true) {
     $query = mysqli_query($conn, $sql) or die ("Erro!");
 
     if (mysqli_affected_rows($conn)){
-    echo "<script> window.history.back() </script>";
+    echo "<script> window.close() </script>";
     }
     else{
     echo "<script> window.alert('Erro!') </script>";
-    echo "<script> window.history.back() </script>";
+    echo "<script> window.close() </script>";
     }
 }
 

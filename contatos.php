@@ -32,6 +32,7 @@ $usuario = $tabela["usuario"];
 }
 
 include 'php/navmain.php';
+include 'php/scrtop.php';
 ?>
 <div id="corpo">
 <?php

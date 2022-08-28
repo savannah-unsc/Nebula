@@ -29,7 +29,7 @@ if(isset($id) == false){
   $datahora = "$data $hora";
 
 $sql = "INSERT INTO chat (remetente, destinatario, mensagem, datahora) values ($id, $idconvidado, '$msg', '$datahora')";
-$query = mysqli_query($conn, $sql) or die ("<script> window.alert('Erro') </script> <script> location.href='../chat.php?id=$idconvidado </script>");
+$query = mysqli_query($conn, $sql) or die ("<script> window.alert('Erro') </script> <script> window.close() </script>");
 
 $sqla = "select * from chat where remetente = $id and destinatario = $idconvidado and mensagem = '$msg' and datahora = '$datahora'";
 $resultado=mysqli_query($conn,$sqla);
@@ -42,10 +42,10 @@ $sql = "INSERT INTO notifications (destinatario, remetente, interacao, tipo) val
 $query = mysqli_query($conn, $sql) or die ("<script> window.alert('Erro') </script> <script> window.history.back() </script>");
 
 if (mysqli_affected_rows($conn)){
-echo "<script> location.href='../conversa.php?id=$idconvidado'</script>";
+  echo "<script> window.close() </script>";
 }
 else {
-echo "<script> location.href='../conversa.php?id=$idconvidado'</script>";
+  echo "<script> window.close() </script>";
 }
 
 ?>

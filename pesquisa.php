@@ -49,6 +49,8 @@ if(isset($id) == false){
   include 'php/navmain.php';
 }
 
+include 'php/scrtop.php';
+
 echo "<div id='corpo'>";
 
 $sql = "select * from users where usuario like '%$busca%' order by seguidores desc";
