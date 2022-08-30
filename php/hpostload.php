@@ -11,86 +11,82 @@ $postagens = "user_id = $id ";
 
 $sql = "select * from follow where idmaior ='$id' or idmenor ='$id'";
 
-$result=mysqli_query($conn,$sql);
-while($tabela=mysqli_fetch_array($result))
-{
-$idmaior = $tabela["idmaior"];
-$idmenor = $tabela["idmenor"];
-$maiormenor = $tabela["maiormenor"];
-$menormaior = $tabela["menormaior"];
-if ($idmaior != $id) {
-  if ($menormaior == 1) {
-    $postagens = "$postagens or user_id = $idmaior ";
+$result = mysqli_query($conn, $sql);
+while ($tabela = mysqli_fetch_array($result)) {
+  $idmaior = $tabela["idmaior"];
+  $idmenor = $tabela["idmenor"];
+  $maiormenor = $tabela["maiormenor"];
+  $menormaior = $tabela["menormaior"];
+  if ($idmaior != $id) {
+    if ($menormaior == 1) {
+      $postagens = "$postagens or user_id = $idmaior ";
+    }
   }
-}
-if ($idmenor != $id) {
-  if ($maiormenor == 1) {
-    $postagens = "$postagens or user_id = $idmenor ";
+  if ($idmenor != $id) {
+    if ($maiormenor == 1) {
+      $postagens = "$postagens or user_id = $idmenor ";
+    }
   }
-}
 }
 
-if ($postagens == "user_id = $id ") { 
-$sql = "select * from users where id != $id";
-$result=mysqli_query($conn,$sql);
-while($tabela=mysqli_fetch_array($result))
-{
-  $idoutro = $tabela["id"];
-  $postagens = "$postagens or user_id = $idoutro";
-}
+if ($postagens == "user_id = $id ") {
+  $sql = "select * from users where id != $id";
+  $result = mysqli_query($conn, $sql);
+  while ($tabela = mysqli_fetch_array($result)) {
+    $idoutro = $tabela["id"];
+    $postagens = "$postagens or user_id = $idoutro";
+  }
 }
 
 $sql = "SELECT * FROM posts where $postagens order by id desc";
 
-$result=mysqli_query($conn,$sql);
-while($tabela=mysqli_fetch_array($result))
-{
-$postid = $tabela['id'];
-$publisherid = $tabela['user_id'];
-$tipo = $tabela['tipo'];
-$midia = $tabela['midia'];
-$curtidas = $tabela['curtidas'];
-$msg = base64_decode($tabela['conteudo']);
+$result = mysqli_query($conn, $sql);
+while ($tabela = mysqli_fetch_array($result)) {
+  $postid = $tabela['id'];
+  $publisherid = $tabela['user_id'];
+  $tipo = $tabela['tipo'];
+  $midia = $tabela['midia'];
+  $curtidas = $tabela['curtidas'];
+  $msg = base64_decode($tabela['conteudo']);
 
-if ($curtidas >= 1000) {
-  $curtidas = $curtidas / 1000;
-  $curtidas = number_format($curtidas, 1, '.', '');
-  $curtidas = "$curtidas<b>k</b>";
-}
+  if ($curtidas >= 1000) {
+    $curtidas = $curtidas / 1000;
+    $curtidas = number_format($curtidas, 1, '.', '');
+    $curtidas = "$curtidas<b>k</b>";
+  }
 
-if ($curtidas >= 1000000) {
-  $curtidas = $curtidas / 1000;
-  $curtidas = number_format($curtidas, 1, '.', '');
-  $curtidas = "$curtidas<b>M</b>";
-}
+  if ($curtidas >= 1000000) {
+    $curtidas = $curtidas / 1000;
+    $curtidas = number_format($curtidas, 1, '.', '');
+    $curtidas = "$curtidas<b>M</b>";
+  }
 
-$sqla = "SELECT * FROM users where id = $publisherid";
-$resultado=mysqli_query($conn,$sqla);
-if ($tabela=mysqli_fetch_array($resultado)) {
-  $publishername = $tabela['usuario'];
-  $publisheruid = $tabela['uid'];
-  $publishericon = $tabela['icon'];
-  $publisherbanner = $tabela['banner'];
-}
+  $sqla = "SELECT * FROM users where id = $publisherid";
+  $resultado = mysqli_query($conn, $sqla);
+  if ($tabela = mysqli_fetch_array($resultado)) {
+    $publishername = $tabela['usuario'];
+    $publisheruid = $tabela['uid'];
+    $publishericon = $tabela['icon'];
+    $publisherbanner = $tabela['banner'];
+  }
 
-$sqlb = "SELECT * from likes where usuario = $id and post = $postid";
-    $res=mysqli_query($conn,$sqlb);
-    while($table=mysqli_fetch_array($res))
-    {
-        $curtval = $table["post"];
-    }
+  $sqlb = "SELECT * from likes where usuario = $id and post = $postid";
+  $res = mysqli_query($conn, $sqlb);
+  while ($table = mysqli_fetch_array($res)) {
+    $curtval = $table["post"];
+  }
 
-if ($curtval == $postid) {
-  $curtidasform = "<form class='curtirf' action='php/curtir.php' method='post' target='_BLANK'>";
-} else {
-  $curtidasform = "<form class='curtir' action='php/curtir.php' method='post' target='_BLANK'>";
-}
+  if ($curtval == $postid) {
+    $curtidasform = "<form class='curtirf' action='php/curtir.php' method='post' target='_BLANK'>";
+  } else {
+    $curtidasform = "<form class='curtir' action='php/curtir.php' method='post' target='_BLANK'>";
+  }
 
-$msg = htmlspecialchars($msg);
+  $msg = htmlspecialchars($msg);
 
-if ($tipo == 0) {
+  if ($tipo == 0) {
 
-echo "<div id='postagem'>
+    echo "<div id='postagem'>
 <div id='postheader'>
 <form action='perfil.php' class='icon' method='get' style='background-image: url(img/user_icons/$publishericon)'>
 <input type='hidden' name='id' value='$publisherid'>
@@ -114,10 +110,9 @@ $curtidasform
 </form>
 </div>
 </div>";
+  } else {
 
-} else {
-
-  echo "<div id='postagem'>
+    echo "<div id='postagem'>
   <div id='postheader'>
   <form action='perfil.php' class='icon' method='get' style='background-image: url(img/user_icons/$publishericon)'>
   <input type='hidden' name='id' value='$publisherid'>
@@ -147,8 +142,5 @@ $curtidasform
   </form>
   </div>
   </div>";
-
+  }
 }
-}
-
-?>

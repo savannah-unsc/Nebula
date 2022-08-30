@@ -123,7 +123,7 @@
 
   #lista {
     margin-left: 78.5vw;
-    height: 40vh;
+    height: 45vh;
     width: 20vw;
     border-radius: 0.5vh;
     padding-top: 1.5vh;
@@ -218,7 +218,7 @@
 
     #lista {
       margin-left: 47vw;
-      height: 40vh;
+      height: 45vh;
       width: 50vw;
       padding-top: 1.5vh;
       padding-bottom: 1.5vh;
@@ -287,7 +287,7 @@
 
     #lista {
       margin-left: 5vw;
-      height: 40vh;
+      height: 45vh;
       width: 90vw;
       padding-top: 1.5vh;
       padding-bottom: 1.5vh;
