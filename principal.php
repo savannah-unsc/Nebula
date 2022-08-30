@@ -51,6 +51,6 @@ include 'php/scrtop.php';
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="js/hpostload.js"></script>
 <script type="text/javascript" src="js/imgprev.js"></script>
-<script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="js/menu.js"></script>   
 </body>
 </html>

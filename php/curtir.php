@@ -16,7 +16,6 @@ include_once("conexao.php");
 
 session_start();
 $id = $_SESSION['id'];
-
 $postid = $_POST['postid'];
 
 $sql = "SELECT * from likes where usuario = $id and post = $postid";
