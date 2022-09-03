@@ -64,36 +64,10 @@
     background-color: #40444B;
   }
 
-  #chat {
-    background-image: url(../img/icons/contatos.png);
-    background-size: 2.5vw;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: 0.3s;
-    display: grid;
-  }
-
-  #chat:hover {
-    background-image: url(../img/icons/contatos_hover.png);
-  }
-
-  #config {
-    background-image: url(../img/icons/config.png);
-    background-size: 2.5vw;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: 0.3s;
-    display: grid;
-  }
-
-  #config:hover {
-    background-image: url(../img/icons/config_hover.png);
-  }
-
   #navicodiv {
     display: grid;
-    grid-template-columns: 0.5vw 4vw 0.5vw;
-    grid-auto-rows: 0.5vw 4vw 0.5vw;
+    grid-template-columns: auto 7.5vh auto;
+    grid-auto-rows: 1.25vh 7.5vh 1.25vh;
     margin-left: auto;
     margin-right: auto;
   }

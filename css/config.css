@@ -149,48 +149,105 @@
     background-color: #40444B;
 }
 
+#combgdiv {
+    background-color: #0D0E0FAA;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 1;
+    display: none;
+}
+
+#combgdiv.active {
+    display: block;
+}
+
+#comchdiv {
+    background-color: #202225;
+    height: 30vh;
+    width: 30vw;
+    margin-left: 35vw;
+    margin-top: 35vh;
+    border-radius: 0.5vh;
+    text-align: center;
+    display: grid;
+}
+
+.cbcom {
+    margin-top: 10vh;
+    font-weight: bold;
+}
+
+#comcbbtn {
+    background-color: #2F3136;
+    border: none;
+    transition: 0.3s;
+}
+
+#comcbbtn:hover {
+    background-color: #40444B;
+}
+
+#closebtn {
+    height: 5vh;
+    width: 2.5vw;
+    position: fixed;
+    margin-top: 35vh;
+    margin-left: 62.5vw;
+    border: none;
+    font-size: 2.5vh;
+    font-weight: bold;
+    background-color: #0000;
+    transition: 0.3s;
+}
+
+#closebtn:hover {
+    color: #AFAFAF;
+}
+
 @media screen and (min-device-width: 430px) and (max-device-width: 1024px) {
-    
+
     .confmenu {
         width: 90vw;
         grid-template-columns: 25vw 47.5vw 17.5vw;
     }
-    
+
     .confmenu2 {
         width: 90vw;
         grid-template-columns: 25vw 47.5vw 17.5vw;
     }
-    
+
     .title {
         margin-top: 10vh;
     }
-    
+
     .title2l {
         margin-top: 7vh;
     }
-    
+
     .title3 {
         margin-top: 20vh;
     }
-    
+
     #lolinp {
         width: 40vw;
     }
-    
+
     #exitbtn {
         width: 15vw;
     }
-    
+
     .inp {
         width: 40vw;
         grid-template-columns: 32.5vw 7.5vw;
     }
-    
+
     .inpf {
         width: 40vw;
         grid-template-columns: 40vw;
     }
 }
+
 @media screen and (max-device-width: 429px) {
 
     .confmenu {
@@ -199,48 +256,48 @@
         grid-template-columns: 90vw;
         grid-template-rows: 15vh auto 5vh;
     }
-    
+
     .confmenu2 {
         height: 57vh;
         width: 90vw;
         grid-template-columns: 90vw;
         grid-template-rows: 15vh auto 5vh;
     }
-    
+
     .title {
         margin-top: 2vh;
         width: 90vw;
     }
 
-    .conmenu h1{
-        margin-top: 7.5vh!important;
+    .conmenu h1 {
+        margin-top: 7.5vh !important;
     }
-    
+
     .title2l {
         margin-top: 2.5vh;
         width: 90vw;
     }
-    
+
     .title3 {
         margin-top: 2vh;
         width: 90vw;
     }
-    
+
     #lolinp {
         margin-top: 7.5vh;
         width: 70vw;
     }
-    
+
     #exitbtn {
         width: 30vw;
     }
-    
+
     .inp {
         margin-top: 2;
         width: 70vw;
         grid-template-columns: 55vw 15vw;
     }
-    
+
     .inpf {
         margin-top: 4vh;
         width: 70vw;

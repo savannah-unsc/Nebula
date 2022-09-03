@@ -6,3 +6,7 @@ function openmenu() {
     const menuToggle = document.querySelector('#postmenubg');
     menuToggle.classList.toggle('active');
   }
+function menucom() {
+  const menuToggle = document.querySelector('#combgdiv');
+  menuToggle.classList.toggle('active');
+}
