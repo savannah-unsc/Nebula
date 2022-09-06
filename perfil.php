@@ -26,6 +26,11 @@ $banner = $tabela["banner"];
 $icon = $tabela["icon"];
 $seguindo = $tabela["seguindo"];
 $seguidores = $tabela["seguidores"];
+$tipo = $tabela["tipo"];
+}
+
+if ($tipo == 1) {
+  echo "<script> location.href='comunidade.php'</script>";
 }
 
 $bio = htmlspecialchars($bio);

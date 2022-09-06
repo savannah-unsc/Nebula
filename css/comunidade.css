@@ -1,0 +1,72 @@
+#postarform {
+    background-color: #202225;
+    margin-top: 2.5vh;
+    margin-bottom: 5vh;
+    border-radius: 0.5vh;
+    width: 50vw;
+    height: 20vh;
+    display: grid;
+    grid-template-columns: 35vw 3vw 12vw;
+    grid-template-rows: 15vh 5vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#postararea {
+    height: 17vh;
+    width: 32vw;
+    margin-top: 1.5vh;
+    margin-left: 1.5vw;
+    background-color: #202225;
+    border: none;
+    resize: none;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+#postimagepreview {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 12vh;
+    width: 12vw;
+    margin-top: 1.5vh;
+    margin-left: 1.5vw;
+    border-radius: 0.5vh;
+}
+
+#postarlab {
+    background-image: url(../img/icons/up.png);
+    background-size: 3vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 4vh;
+    width: 4vh;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.3s;
+}
+
+#postarlab:hover {
+    background-image: url(../img/icons/up_hover.png);
+}
+
+#postarfile {
+    display: none;
+}
+
+#postarbtn {
+    background-color: #40444B;
+    border: none;
+    border-radius: 0.5vh;
+    height: 4vh;
+    width: 10vw;
+    margin-left: 0.5vw;
+    transition: 0.3s;
+}
+
+#postarbtn:hover {
+    background-color: #2F3136;
+}
