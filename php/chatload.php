@@ -137,6 +137,8 @@ while($tabela=mysqli_fetch_array($resultado))
         $idmsg = $idr;
       }
 
+      $msg = htmlspecialchars($msg);
+
     if ($lastid != $idmsg) {
       echo "<div class='spmsg'> </div>
       <div class='msg'>

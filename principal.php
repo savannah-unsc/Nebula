@@ -45,7 +45,155 @@ include 'php/scrtop.php';
 <input id="postarfile" type="file" name="postmedia" accept="image/*">
 <input id="postarbtn" type="submit" value="Publicar">
 </form>
-<div class='postagens'></div>
+<div class='postagens'>
+  <?php
+  
+  $postagens = "user_id = $id ";
+
+$sql = "select * from follow where idmaior ='$id' or idmenor ='$id'";
+
+$result=mysqli_query($conn,$sql);
+while($tabela=mysqli_fetch_array($result))
+{
+$idmaior = $tabela["idmaior"];
+$idmenor = $tabela["idmenor"];
+$maiormenor = $tabela["maiormenor"];
+$menormaior = $tabela["menormaior"];
+if ($idmaior != $id) {
+  if ($menormaior == 1) {
+    $postagens = "$postagens or user_id = $idmaior ";
+  }
+}
+if ($idmenor != $id) {
+  if ($maiormenor == 1) {
+    $postagens = "$postagens or user_id = $idmenor ";
+  }
+}
+}
+
+if ($postagens == "user_id = $id ") { 
+$sql = "select * from users where id != $id";
+$result=mysqli_query($conn,$sql);
+while($tabela=mysqli_fetch_array($result))
+{
+  $idoutro = $tabela["id"];
+  $postagens = "$postagens or user_id = $idoutro";
+}
+}
+
+$sql = "SELECT * FROM posts where $postagens order by id desc";
+
+$result=mysqli_query($conn,$sql);
+while($tabela=mysqli_fetch_array($result))
+{
+$postid = $tabela['id'];
+$publisherid = $tabela['user_id'];
+$tipo = $tabela['tipo'];
+$midia = $tabela['midia'];
+$curtidas = $tabela['curtidas'];
+$msg = base64_decode($tabela['conteudo']);
+
+if ($curtidas >= 1000) {
+  $curtidas = $curtidas / 1000;
+  $curtidas = number_format($curtidas, 1, '.', '');
+  $curtidas = "$curtidas<b>k</b>";
+}
+
+if ($curtidas >= 1000000) {
+  $curtidas = $curtidas / 1000;
+  $curtidas = number_format($curtidas, 1, '.', '');
+  $curtidas = "$curtidas<b>M</b>";
+}
+
+$sqla = "SELECT * FROM users where id = $publisherid";
+$resultado=mysqli_query($conn,$sqla);
+if ($tabela=mysqli_fetch_array($resultado)) {
+  $publishername = $tabela['usuario'];
+  $publisheruid = $tabela['uid'];
+  $publishericon = $tabela['icon'];
+  $publisherbanner = $tabela['banner'];
+}
+
+$sqlb = "SELECT * from likes where usuario = $id and post = $postid";
+    $res=mysqli_query($conn,$sqlb);
+    while($table=mysqli_fetch_array($res))
+    {
+        $curtval = $table["post"];
+    }
+
+if ($curtval == $postid) {
+  $curtidasform = "<form class='curtirf' action='php/curtir.php' method='post' target='_BLANK'>";
+} else {
+  $curtidasform = "<form class='curtir' action='php/curtir.php' method='post' target='_BLANK'>";
+}
+
+$msg = htmlspecialchars($msg);
+
+if ($tipo == 0) {
+
+echo "<div id='postagem'>
+<div id='postheader'>
+<form action='perfil.php' class='icon' method='get' style='background-image: url(img/user_icons/$publishericon)'>
+<input type='hidden' name='id' value='$publisherid'>
+<input type='submit' value='' class='invico'>
+</form>
+<h1 class='pubname'> $publishername<b class='gray'>#$publisheruid</b></h1>
+</div>
+<div>
+<p class='pubtxt'> $msg </p>
+</div>
+<div class='acoes'>
+<div></div>
+$curtidasform
+<input type='hidden' name='postid' value='$postid'>
+<input type='submit' value='' class='invbtn'>
+</form>
+<div class='curtidas'> <h2> $curtidas </h2> </div>
+<form class='pubview' action='post.php' method='get'>
+<input type='hidden' name='publicacao' value='$postid'>
+<input type='submit' value='Comentários' class='postvbtn'>
+</form>
+</div>
+</div>";
+
+} else {
+
+  echo "<div id='postagem'>
+  <div id='postheader'>
+  <form action='perfil.php' class='icon' method='get' style='background-image: url(img/user_icons/$publishericon)'>
+  <input type='hidden' name='id' value='$publisherid'>
+  <input type='submit' value='' class='invico'>
+  </form>
+  <h1 class='pubname'> $publishername<b class='gray'>#$publisheruid</b></h1>
+  </div>
+  <div>
+  <p class='pubtxt'> $msg </p>
+  <form class='foto' action='post.php' method='get'>
+  <input type='hidden' name='publicacao' value='$postid'>
+  <button type='submit' class='imabot'>
+  <img src='posts/$midia' class='imageviewer'>
+  </button>
+  </form>
+  </div>
+  <div class='acoes'>
+  <div></div>
+  $curtidasform
+  <input type='hidden' name='postid' value='$postid'>
+  <input type='submit' value='' class='invbtn'>
+  </form>
+  <div class='curtidas'> <h2> $curtidas </h2> </div>
+  <form class='pubview' action='post.php' method='get'>
+  <input type='hidden' name='publicacao' value='$postid'>
+  <input type='submit' value='Comentários' class='postvbtn'>
+  </form>
+  </div>
+  </div>";
+
+}
+}
+  
+  ?>
+</div>
 <p id="end"> Você chegou ao fim da navegação! </p>
 </div></div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

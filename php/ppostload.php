@@ -20,6 +20,7 @@ $tipo = $tabela['tipo'];
 $midia = $tabela['midia'];
 $curtidas = $tabela['curtidas'];
 $msg = base64_decode($tabela['conteudo']);
+$comuserid = $tabela['com_user_id'];
 
 if ($curtidas >= 1000) {
   $curtidas = $curtidas / 1000;
@@ -33,13 +34,30 @@ if ($curtidas >= 1000000) {
   $curtidas = "$curtidas<b>M</b>";
 }
 
-$sqla = "SELECT * FROM users where id = $publisherid";
+if ($comuserid == 0 or $comuserid == $publisherid) {
+  $sqla = "SELECT * FROM users where id = $publisherid";
 $resultado=mysqli_query($conn,$sqla);
 if ($tabela=mysqli_fetch_array($resultado)) {
   $publishername = $tabela['usuario'];
   $publisheruid = $tabela['uid'];
   $publishericon = $tabela['icon'];
   $publisherbanner = $tabela['banner'];
+}
+} else {
+  $sqla = "SELECT * FROM users where id = $comuserid";
+  $resultado=mysqli_query($conn,$sqla);
+  if ($tabela=mysqli_fetch_array($resultado)) {
+  $publishername = $tabela['usuario'];
+  $publisheruid = $tabela['uid'];
+  $publishericon = $tabela['icon'];
+  $publisherbanner = $tabela['banner'];
+}
+$sqla = "SELECT * FROM users where id = $publisherid";
+$resultado=mysqli_query($conn,$sqla);
+if ($tabela=mysqli_fetch_array($resultado)) {
+  $coname = $tabela['usuario'];
+  $couid = $tabela['uid'];
+}
 }
 
 $sqlb = "SELECT * from likes where usuario = $id and post = $postid";
@@ -68,7 +86,7 @@ if ($tipo == 0) {
   <h1 class='pubname'> $publishername<b class='gray'>#$publisheruid</b></h1>
   </div>
   <div>
-  <p class='pubtxt'> $msg </p>
+  <p class='pubtxt'> $msg <br> Enviado na Comunidade: <b> <a href='perfil.php?id=$publisherid'> $coname </a> </b> </p>
   </div>
   <div class='acoes'>
   <div></div>
