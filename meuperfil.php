@@ -194,7 +194,5 @@ if ($tipo == 0) {
       ?>
     </div>
 <p id="end"> Você chegou ao fim da navegação! </p>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="js/mppostload.js"></script>
   </body>
 </html>
