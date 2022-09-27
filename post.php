@@ -126,6 +126,9 @@ if (isset($validade) == true) {
           $userid = $tabela['user_id'];
           $msg = base64_decode($tabela['msg']);
 
+          $msg = htmlspecialchars($msg);
+          $msg = MontarLink($msg);
+
           $sqla = "SELECT * FROM users where id = $userid";
 
           $resultado = mysqli_query($conn, $sqla);
