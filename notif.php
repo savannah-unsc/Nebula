@@ -14,6 +14,7 @@ ini_set('display_errors', 0);
 error_reporting(0);
 
 include 'php/conexao.php';
+include 'php/mostralink.php';
 
 session_start();
 $id = $_SESSION['id'];

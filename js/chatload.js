@@ -9,7 +9,7 @@ function myMethod( )
                     $(".msgbox").html(result);
                 },
                 error: function(){
-                    $(".msgbox").html("Error");
+                    $(".msgbox").html("Erro ao carregar o chat  ");
                 }
         });
     }); 

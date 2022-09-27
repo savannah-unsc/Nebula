@@ -16,6 +16,7 @@
     // error_reporting(0);
 
 include 'php/conexao.php';
+include 'php/mostralink.php';
 
     session_start();
     $id = $_SESSION['id'];
@@ -33,6 +34,7 @@ while ($tabela = mysqli_fetch_array($result)) {
   $curtidas = $tabela['curtidas'];
   $msg = base64_decode($tabela['conteudo']);
   $msg = htmlspecialchars($msg);
+  $msg = MontarLink($msg);
 
   $sqla = "SELECT * FROM users where id = $publisherid";
   $resultado = mysqli_query($conn, $sqla);

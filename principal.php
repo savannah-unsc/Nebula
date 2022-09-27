@@ -33,6 +33,8 @@ $usuario = $tabela["usuario"];
 
 include 'php/navmain.php';
 include 'php/scrtop.php';
+include 'php/mostralink.php';
+
 ?>
 <div id="body">
   <div></div>
@@ -128,6 +130,7 @@ if ($curtval == $postid) {
 }
 
 $msg = htmlspecialchars($msg);
+$msg = MontarLink($msg);
 
 if ($tipo == 0) {
 

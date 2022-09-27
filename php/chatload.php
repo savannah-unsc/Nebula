@@ -3,6 +3,7 @@ ini_set('display_errors', 0);
 error_reporting(0);
 
 require 'conexao.php';
+include 'mostralink.php';
 
 session_start();
 $id = $_SESSION['id'];
@@ -138,6 +139,7 @@ while($tabela=mysqli_fetch_array($resultado))
       }
 
       $msg = htmlspecialchars($msg);
+      $msg = MontarLink($msg);
 
     if ($lastid != $idmsg) {
       echo "<div class='spmsg'> </div>

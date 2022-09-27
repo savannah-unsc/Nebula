@@ -1,5 +1,6 @@
 <?php
 include ("php/conexao.php");
+include 'php/mostralink.php';
 
 ini_set('display_errors', 0);
 error_reporting(0);
@@ -199,6 +200,7 @@ if ($curtval == $postid) {
 }
 
 $msg = htmlspecialchars($msg);
+$msg = MontarLink($msg);
 
 if ($tipo == 0) {
 

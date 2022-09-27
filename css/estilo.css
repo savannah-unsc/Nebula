@@ -56,3 +56,12 @@ textarea {
 #space5 {
     height: 5vh;
 }
+
+a{
+    text-decoration: none;
+    color: #A569BD;
+    transition: 0.3s;
+}
+a:hover{
+    color:  #7d3c98;
+}

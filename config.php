@@ -10,18 +10,6 @@
 </head>
 
 <body>
-
-  <div id="combgdiv">
-    <button id="closebtn" onclick="menucom()"> x </button>
-    <form id="comchdiv" action="php/comtrans.php" method="post">
-      <div>
-        <input class="cbcom" name="cbcom" type="checkbox" required>
-        <label class="cbcom" for="cbcom"> Confirmo que desejo transformar meu perfil em uma comunidade (Essa ação é irreversivel) </label>
-      </div>
-      <input type="submit" value="Guardar" id="comcbbtn">
-    </form>
-  </div>
-
   <?php
   include 'php/conexao.php';
   session_start();
@@ -42,31 +30,6 @@
 
   include 'php/navmain.php';
   ?>
-
-  <h1 class="headerh1"> Conexões </h1>
-
-  <form class="confmenu" action="php/lolconn.php" method="post">
-    <div class="titlemenu">
-      <h1 class="title"> League of Legends </h1>
-    </div>
-    <div class="conmenu">
-      <input type="text" id="lolinp" name="loname" placeholder="Nome de Invocador" minlength="3" maxlength="16" required>
-    </div>
-    <div class="confirmbtndiv">
-      <input class="confirmbtn" type="submit" value="Guardar">
-    </div>
-  </form>
-
-  <!-- <div class="confmenu">
-    <div class="titlemenu"> <h1 class="title"> Spotify </h1> </div>
-    <div class="conmenu">
-      <div class="inpf"> <input type="password" name="password" class="inptxt" id="password" placeholder="Senha" minlength="8" maxlength="32" required> </div>
-      <div class="inp"> <input type="password" name="password" class="inptxt" id="password" placeholder="Senha" minlength="8" maxlength="32" required> <button type="button" id="vbtn" onclick="altpas()"> <img class="visibility" src="img/icons/visibility.png"> </button> </div>
-    </div>
-    <div class="confirmbtndiv">
-      <input class="confirmbtn" type="submit" value="Guardar">
-    </div>
-  </div> -->
 
   <h1 class="headerh1"> Minha Conta </h1>
 
@@ -122,38 +85,6 @@
      ">
     </div>
   </form>
-
-  <div class="confmenu">
-    <div class="titlemenu">
-      <h1 class="title"> Ativar Comunidade </h1>
-    </div>
-    <div class="conmenu">
-      <h1 class="title">
-        <?php
-
-        if ($tipo == 0) {
-          echo "Perfil Comum";
-        } else {
-          echo "Comunidade";
-        }
-
-        ?>
-      </h1>
-    </div>
-    <div class="confirmbtndiv">
-      <?php
-      if ($tipo == 0) {
-        echo "<button class='confirmbtn' id='combtn' type='button' onclick='menucom()'>
-        Ativar
-        </button>";
-      } else {
-        echo "<button class='confirmbtn' id='combtn' type='button'>
-        Ativa
-        </button>";
-      }
-      ?>
-    </div>
-  </div>
 
   <form class="confmenu" action="php/delete4ever.php" method="post">
     <div class="titlemenu">
