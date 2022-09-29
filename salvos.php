@@ -86,9 +86,9 @@ while($tabela=mysqli_fetch_array($resultado))
     }
 
 if ($curtval == $postid) {
-  $curtidasform = "<form class='curtirf' action='php/curtir.php' method='post' target='_BLANK'>";
+  $curtidasform = "<form class='curtirf' action='php/curtir.php' method='post'>";
 } else {
-  $curtidasform = "<form class='curtir' action='php/curtir.php' method='post' target='_BLANK'>";
+  $curtidasform = "<form class='curtir' action='php/curtir.php' method='post'>";
 }
     
     $msg = htmlspecialchars($msg);

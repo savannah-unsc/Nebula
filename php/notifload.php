@@ -4,6 +4,7 @@ ini_set('display_errors', 0);
 error_reporting(0);
 
 include 'conexao.php';
+include 'mostralink.php';
 
 session_start();
 $id = $_SESSION['id'];
@@ -36,6 +37,9 @@ if ($tipo == 0) {
         $postid = $tab["post_id"];
         $msg = base64_decode($tab["msg"]);
 
+        $msg = htmlspecialchars($msg);
+        $msg = MontarLink($msg);
+
         echo "<div class='notdiv'>
         <div class='notnav'>
         <form action='perfil.php' style='background-image: url(img/user_icons/$nicon)' class='notico'>
@@ -59,6 +63,9 @@ if ($tipo == 0) {
     while($t=mysqli_fetch_array($re))
     {
         $msg = base64_decode($t["mensagem"]);
+
+        $msg = htmlspecialchars($msg);
+        $msg = MontarLink($msg);
 
         echo "<div class='notdiv'>
         <div class='notnav'>

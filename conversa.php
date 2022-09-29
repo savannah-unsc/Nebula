@@ -59,7 +59,7 @@ if ($idchat == $id) {
 ");
 } else {
     echo("<form action='php/envia.php' method='post' id='tbox' target='_BLANK'>
-    <textarea maxlength='450' name='msg' id='ctxt' placeholder='O que você tem a dizer?'></textarea>
+    <textarea maxlength='450' name='msg' id='ctxt' placeholder='O que você tem a dizer?' required></textarea>
     <input type='hidden' value='$idchat' name='destinatario'>
     <input type='submit' value='' id='envtxt' onclick='limpar()'>
     </form>
@@ -151,6 +151,16 @@ function limpar(){
     }
 }
 
+</script>
+
+<script>
+    var input = document.getElementById("envtxt");
+    input.addEventListener("keyup", function(event) {
+         if (event.keyCode === 13) {
+            event.preventDefault();
+             document.getElementById("botaoForm").click();
+        }
+    });
 </script>
 
 </body>

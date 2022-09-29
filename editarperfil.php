@@ -15,9 +15,9 @@ while($tabela=mysqli_fetch_array($result))
 {
 
 $id = $tabela["id"];
-$usuario = $tabela["usuario"];
+$usuario = trim($tabela["usuario"]);
 $uid = $tabela["uid"];
-$bio = base64_decode($tabela["bio"]);
+$bio = trim(base64_decode($tabela["bio"]));
 $banner = $tabela["banner"];
 $icon = $tabela["icon"];
 $seguindo = $tabela["seguindo"];
@@ -73,7 +73,7 @@ $seguidores = $tabela["seguidores"];
         <?php
 
         echo "<div class='inp'> <input type='text' value='$usuario' name='username' class='inptxt' placeholder='Nome de Usuário' minlength='4' maxlength='20' required> <div> <h1><b class='gray'>#$uid</b></h1> </div> </div>";
-        echo "<div id='biodiv'> <textarea placeholder='Biografia' id='bioarea' name='bio' maxlength='150'> $bio </textarea> </div>";
+        echo "<div id='biodiv'> <textarea placeholder='Biografia' id='bioarea' name='bio' maxlength='150'>$bio</textarea> </div>";
         ?>
         <input id="editbtn" type="submit" value="Salvar">
       </form>

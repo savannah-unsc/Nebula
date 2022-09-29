@@ -30,10 +30,6 @@ $seguidores = $tabela["seguidores"];
 $tipo = $tabela["tipo"];
 }
 
-if ($tipo == 1) {
-  echo "<script> location.href='comunidade.php'</script>";
-}
-
 $bio = htmlspecialchars($bio);
 
 if (isset($usuario) == false) {
@@ -160,7 +156,6 @@ if ($curtidas >= 1000000) {
   $curtidas = "$curtidas<b>M</b>";
 }
 
-if ($comuserid == 0 or $comuserid == $publisherid) {
   $sqla = "SELECT * FROM users where id = $publisherid";
 $resultado=mysqli_query($conn,$sqla);
 if ($tabela=mysqli_fetch_array($resultado)) {
@@ -168,22 +163,6 @@ if ($tabela=mysqli_fetch_array($resultado)) {
   $publisheruid = $tabela['uid'];
   $publishericon = $tabela['icon'];
   $publisherbanner = $tabela['banner'];
-}
-} else {
-  $sqla = "SELECT * FROM users where id = $comuserid";
-  $resultado=mysqli_query($conn,$sqla);
-  if ($tabela=mysqli_fetch_array($resultado)) {
-  $publishername = $tabela['usuario'];
-  $publisheruid = $tabela['uid'];
-  $publishericon = $tabela['icon'];
-  $publisherbanner = $tabela['banner'];
-}
-$sqla = "SELECT * FROM users where id = $publisherid";
-$resultado=mysqli_query($conn,$sqla);
-if ($tabela=mysqli_fetch_array($resultado)) {
-  $coname = $tabela['usuario'];
-  $couid = $tabela['uid'];
-}
 }
 
 $sqlb = "SELECT * from likes where usuario = $id and post = $postid";
@@ -194,9 +173,9 @@ $sqlb = "SELECT * from likes where usuario = $id and post = $postid";
     }
 
 if ($curtval == $postid) {
-  $curtidasform = "<form class='curtirf' action='php/curtir.php' method='post' target='_BLANK'>";
+  $curtidasform = "<form class='curtirf' action='php/curtir.php' method='post'>";
 } else {
-  $curtidasform = "<form class='curtir' action='php/curtir.php' method='post' target='_BLANK'>";
+  $curtidasform = "<form class='curtir' action='php/curtir.php' method='post'>";
 }
 
 $msg = htmlspecialchars($msg);
@@ -213,7 +192,7 @@ if ($tipo == 0) {
   <h1 class='pubname'> $publishername<b class='gray'>#$publisheruid</b></h1>
   </div>
   <div>
-  <p class='pubtxt'> $msg <br> Enviado na Comunidade: <b> <a href='perfil.php?id=$publisherid'> $coname </a> </b> </p>
+  <p class='pubtxt'> $msg </p>
   </div>
   <div class='acoes'>
   <div></div>
