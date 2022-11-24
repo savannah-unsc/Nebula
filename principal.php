@@ -49,41 +49,8 @@ include 'php/mostralink.php';
 </form>
 <div class='postagens'>
   <?php
-  
-  $postagens = "user_id = $id ";
 
-$sql = "select * from follow where idmaior ='$id' or idmenor ='$id'";
-
-$result=mysqli_query($conn,$sql);
-while($tabela=mysqli_fetch_array($result))
-{
-$idmaior = $tabela["idmaior"];
-$idmenor = $tabela["idmenor"];
-$maiormenor = $tabela["maiormenor"];
-$menormaior = $tabela["menormaior"];
-if ($idmaior != $id) {
-  if ($menormaior == 1) {
-    $postagens = "$postagens or user_id = $idmaior ";
-  }
-}
-if ($idmenor != $id) {
-  if ($maiormenor == 1) {
-    $postagens = "$postagens or user_id = $idmenor ";
-  }
-}
-}
-
-if ($postagens == "user_id = $id ") { 
-$sql = "select * from users where id != $id";
-$result=mysqli_query($conn,$sql);
-while($tabela=mysqli_fetch_array($result))
-{
-  $idoutro = $tabela["id"];
-  $postagens = "$postagens or user_id = $idoutro";
-}
-}
-
-$sql = "SELECT * FROM posts where $postagens order by id desc";
+$sql = "SELECT * FROM posts order by id desc";
 
 $result=mysqli_query($conn,$sql);
 while($tabela=mysqli_fetch_array($result))
@@ -96,15 +63,15 @@ $curtidas = $tabela['curtidas'];
 $msg = base64_decode($tabela['conteudo']);
 
 if ($curtidas >= 1000) {
-  $curtidas = $curtidas / 1000;
-  $curtidas = number_format($curtidas, 1, '.', '');
-  $curtidas = "$curtidas<b>k</b>";
-}
-
-if ($curtidas >= 1000000) {
-  $curtidas = $curtidas / 1000;
-  $curtidas = number_format($curtidas, 1, '.', '');
-  $curtidas = "$curtidas<b>M</b>";
+    if ($curtidas >= 1000000) {
+         $curtidas = $curtidas / 1000000;
+        $curtidas = number_format($curtidas, 1, '.', '');
+        $curtidas = "$curtidas<b>M</b>";
+    } else {
+        $curtidas = $curtidas / 1000;
+        $curtidas = number_format($curtidas, 1, '.', '');
+        $curtidas = "$curtidas<b>k</b>";
+    }
 }
 
 $sqla = "SELECT * FROM users where id = $publisherid";

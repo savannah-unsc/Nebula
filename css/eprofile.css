@@ -125,7 +125,8 @@
     background-color: #40444B;
 }
 
-@media screen and (min-device-width: 430px) and (max-device-width: 1024px) {
+@media only screen and (max-width: 1024px) {
+
     .inp {
         width: 50vw;
         grid-template-columns: 35vw 15vw;
@@ -152,7 +153,7 @@
 
 }
 
-    @media screen and (max-device-width: 429px) {
+@media only screen and (max-width: 470px) {
 
     .inp {
         width: 80vw;

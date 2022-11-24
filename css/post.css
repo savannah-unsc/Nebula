@@ -190,7 +190,6 @@
     margin-right: auto;
     margin-top: 42.5vh;
     border-radius: 0.5vh;
-    display: grid;
     text-align: center;
 }
 #postmenu a{
@@ -212,7 +211,8 @@
     color: #AFAFAF;
 }
 
-@media screen and (min-device-width: 430px) and (max-device-width: 1024px) {
+@media only screen and (max-width: 1024px) {
+
     #corpo {
         height: auto;
         width: 90vw;
@@ -308,7 +308,9 @@
         margin-top: 3vh;
     }
 }
-@media screen and (max-device-width: 429px) {
+
+@media only screen and (max-width: 470px) {
+    
     #corpo {
         height: auto;
         width: 90vw;

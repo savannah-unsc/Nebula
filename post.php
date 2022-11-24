@@ -92,7 +92,7 @@ if (isset($validade) == true) {
       include 'php/navmain.php';
     }
     ?>
-    <form action="php/comentar.php" id="comentbar" method="post">
+    <form action="php/comentar.php" id="comentbar" method="post" autocomplete="off">
       <input type="text" name="mensagem" id="comentartxt" placeholder="O que você tem a dizer?" maxlength="150" required>
       <input type="hidden" name="postid" value="<?php echo ("$postid"); ?>">
       <input type="submit" value="Comentar" id="comentarbtn">

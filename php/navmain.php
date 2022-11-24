@@ -131,7 +131,7 @@
     color: #afafaf;
   }
 
-  @media screen and (min-device-width: 430px) and (max-device-width: 1024px) {
+  @media only screen and (max-width: 1024px) {
 
     #space{
     height: 20vh;
@@ -200,7 +200,7 @@
 
   }
 
-@media screen and (max-device-width: 429px) {
+@media only screen and (max-width: 470px) {
 
     #space{
     height: 20vh;

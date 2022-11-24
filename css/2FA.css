@@ -59,7 +59,8 @@
     background-color: #2F3136;
 }
 
-@media screen and (min-device-width: 430px) and (max-device-width: 1024px) {
+@media only screen and (max-width: 1024px) {
+
     #corpo {
         width: 50vw;
     }
@@ -82,7 +83,7 @@
 
 }
 
-@media screen and (max-device-width: 429px) {
+@media only screen and (max-width: 470px) {
 
     #corpo {
         grid-template-rows: 14vh auto 7vh 7vh;

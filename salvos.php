@@ -57,17 +57,17 @@ while($tabela=mysqli_fetch_array($resultado))
     $curtidas = $tabela['curtidas'];
     $msg = base64_decode($tabela['conteudo']);
 
-    if ($curtidas >= 1000) {
-      $curtidas = $curtidas / 1000;
-      $curtidas = number_format($curtidas, 1, '.', '');
-      $curtidas = "$curtidas<b>k</b>";
-    }
-    
+if ($curtidas >= 1000) {
     if ($curtidas >= 1000000) {
-      $curtidas = $curtidas / 1000;
-      $curtidas = number_format($curtidas, 1, '.', '');
-      $curtidas = "$curtidas<b>M</b>";
+         $curtidas = $curtidas / 1000000;
+        $curtidas = number_format($curtidas, 1, '.', '');
+        $curtidas = "$curtidas<b>M</b>";
+    } else {
+        $curtidas = $curtidas / 1000;
+        $curtidas = number_format($curtidas, 1, '.', '');
+        $curtidas = "$curtidas<b>k</b>";
     }
+}
     
     $sqla = "SELECT * FROM users where id = $publisherid";
     $resultado=mysqli_query($conn,$sqla);

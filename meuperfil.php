@@ -26,9 +26,35 @@ $banner = $tabela["banner"];
 $icon = $tabela["icon"];
 $seguindo = $tabela["seguindo"];
 $seguidores = $tabela["seguidores"];
+
+if ($seguidores >= 1000) {
+    if ($seguidores >= 1000000) {
+        $seguidores = $seguidores / 1000000;
+        $seguidores = number_format($seguidores, 1, '.', '');
+        $seguidores = "$seguidores<b>M</b>";
+    } else {
+        $seguidores = $seguidores / 1000;
+        $seguidores = number_format($seguidores, 1, '.', '');
+        $seguidores = "$seguidores<b>k</b>";
+    }
+}
+
+if ($seguindo >= 1000) {
+    if ($seguindo >= 1000000) {
+        $seguindo = $seguindo / 1000000;
+        $seguindo = number_format($seguindo, 1, '.', '');
+        $seguindo = "$seguidores<b>M</b>";
+    } else {
+        $seguindo = $seguindo / 1000;
+        $seguindo = number_format($seguindo, 1, '.', '');
+        $seguindo = "$seguidores<b>k</b>";
+    }
+}
+
 }
 
 $bio = htmlspecialchars($bio);
+$bio = MontarLink($bio);
 ?>
 
 <!DOCTYPE html>
@@ -94,15 +120,15 @@ $curtidas = $tabela['curtidas'];
 $msg = base64_decode($tabela['conteudo']);
 
 if ($curtidas >= 1000) {
-  $curtidas = $curtidas / 1000;
-  $curtidas = number_format($curtidas, 1, '.', '');
-  $curtidas = "$curtidas<b>k</b>";
-}
-
-if ($curtidas >= 1000000) {
-  $curtidas = $curtidas / 1000;
-  $curtidas = number_format($curtidas, 1, '.', '');
-  $curtidas = "$curtidas<b>M</b>";
+    if ($curtidas >= 1000000) {
+         $curtidas = $curtidas / 1000000;
+        $curtidas = number_format($curtidas, 1, '.', '');
+        $curtidas = "$curtidas<b>M</b>";
+    } else {
+        $curtidas = $curtidas / 1000;
+        $curtidas = number_format($curtidas, 1, '.', '');
+        $curtidas = "$curtidas<b>k</b>";
+    }
 }
 
 $sqla = "SELECT * FROM users where id = $publisherid";

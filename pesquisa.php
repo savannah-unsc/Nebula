@@ -53,7 +53,11 @@ include 'php/scrtop.php';
 
 echo "<div id='corpo'>";
 
-$sql = "select * from users where usuario like '%$busca%' order by seguidores desc";
+if ($busca == "*") {
+    $sql = "select * from users";
+} else {
+    $sql = "select * from users where usuario like '%$busca%' order by seguidores desc";
+}
 
 $result=mysqli_query($conn,$sql);
 while($tabela=mysqli_fetch_array($result))

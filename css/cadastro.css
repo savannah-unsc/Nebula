@@ -116,7 +116,7 @@
     color: #B9BBBE;
 }
 
-@media screen and (min-device-width: 430px) and (max-device-width: 1024px) {
+@media only screen and (max-width: 1024px) {
 
     #logo {
         background-size: 35vw;
@@ -140,9 +140,13 @@
         width: 25vw;
     }
 
+    #cadbtn {
+    width: 25vw;
+    }
+
 }
 
-@media screen and (max-device-width: 429px) {
+@media only screen and (max-width: 470px) {
 
     #logo {
         background-size: 50vw;
@@ -164,6 +168,10 @@
 
     #logbtn {
         width: 35vw;
+    }
+
+    #cadbtn {
+    width: 35vw;
     }
 
 }

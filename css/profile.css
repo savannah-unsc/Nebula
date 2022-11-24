@@ -238,7 +238,7 @@
     border: none;
 }
 
-@media screen and (min-device-width: 430px) and (max-device-width: 1024px) {
+@media only screen and (max-width: 1024px) {
 
     #username {
         margin-top: 1vh;
@@ -301,7 +301,8 @@
 
 }
 
-@media screen and (max-device-width: 429px) {
+@media only screen and (max-width: 470px) {
+
     #username {
         margin-top: 1vh;
         font-size: 2vh;

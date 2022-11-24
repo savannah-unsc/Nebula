@@ -58,8 +58,8 @@ if ($idchat == $id) {
     </form>
 ");
 } else {
-    echo("<form action='php/envia.php' method='post' id='tbox' target='_BLANK'>
-    <textarea maxlength='450' name='msg' id='ctxt' placeholder='O que você tem a dizer?' required></textarea>
+    echo("<form action='php/envia.php' method='post' id='tbox' target='_BLANK' autocomplete='off'>
+    <input type='text' maxlength='450' name='msg' id='ctxt' placeholder='O que você tem a dizer?' required>
     <input type='hidden' value='$idchat' name='destinatario'>
     <input type='submit' value='' id='envtxt' onclick='limpar()'>
     </form>

@@ -70,7 +70,7 @@ p{
     margin-bottom: 7.5vh;
 }
 
-@media screen and (min-device-width: 430px) and (max-device-width: 1024px) {
+@media only screen and (max-width: 1024px) {
 
     #corpo {
         width: 70vw;
@@ -90,7 +90,7 @@ p{
 
 }
 
-@media screen and (max-device-width: 429px) {
+@media only screen and (max-width: 470px) {
 
     #corpo {
         width: 90vw;
